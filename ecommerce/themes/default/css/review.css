@@ -1,0 +1,108 @@
+table.review {
+    border-collapse: collapse;
+    vertical-align: top;
+    margin-left: 10px;
+}
+tr.subtitle {
+	height: 30px;
+    font-size: 12px;
+}
+table.inner_review {
+	border-color: #600;
+    border-width: 1px 1px 1px 1px;
+    border-style: solid;
+    margin-top: 10px;
+}
+tr.inner_title {
+	background-repeat: repeat-x;
+	background-color: rgb(230, 157, 1);
+	border-width: 1px 1px 1px 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	color: white;
+	text-align: center;
+	padding: 0px 0px 5px 12px;
+}
+.input_field {
+	font-size: 24px;
+	width: 88%;
+	padding: 3px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-left: 10px;
+	margin-bottom: 16px;
+	border: 1px solid #e5e5e5;
+	background: #fbfbfb;
+}
+.rating_input_field {
+	text-align: center;
+	font-size: 24px;
+	width: 10%;
+	padding: 3px;
+	margin-left: 10px;
+	margin-top: 2px;
+	margin-right: 6px;
+	margin-bottom: 16px;
+	border: 1px solid #e5e5e5;
+	background: #fbfbfb;
+}
+#tips {
+	float: right; 
+	width: 11em; /* since this element is floated, a width must be given */
+	background: #FBFBFB; /* the background color will be displayed for the length of the content in the column, but no further */
+	padding: 15px 0;
+	float: right;
+	width: 185px;
+	display: block;
+	margin-top: 20px;
+}
+#tips h1 {
+	border-bottom: 1px solid rgb(161, 165, 169);
+	color: rgb(77, 113, 171);
+	font-size: 11px;
+	margin: 0px;
+	padding: 0px 0px 3px 0px;
+}
+#tips li {
+	margin-bottom: 10px;
+	padding: 0px;
+	display: list-item;
+	font-size: 11px;
+}
+.note {
+	font-size: 10px;
+	color: rgb(77, 113, 171);
+	font-style: normal;
+	font-weight: normal;
+}
+table.product {
+	border-width: 1px 1px 1px 1px;
+	border-color: #DDDDDD;
+	border-style: solid;
+	float: top;
+	padding: 10px;
+	width: 600px;
+}
+tr.review_title {
+	font-size: 12px;
+	font-weight: bold;
+	margin: 10px 0px 5px;
+	overflow: hidden;
+}
+.review_descr {
+	font-size: 10px;
+}
+
+textarea#styled {
+	width: 445px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+}
+
+#title-status {
+	margin-left: 10px; 
+	margin-top: -10px; 
+	padding-bottom: 10px;
+}

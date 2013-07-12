@@ -1,0 +1,13 @@
+<VirtualHost devzero:80>
+        ServerAdmin unixo@devzero.it
+        DocumentRoot /usr/home/unixo/commerce
+        ServerName commerce.devzero.it
+        ErrorLog /var/log/commerce.devzero.it-error_log
+        CustomLog /var/log/commerce.devzero.it-access_log combined
+        <Directory "/usr/home/unixo/commerce">
+                Options -Indexes FollowSymLinks
+                AllowOverride None
+                Order allow,deny
+                Allow from all
+        </Directory>
+</VirtualHost>

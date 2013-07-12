@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for common.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file common.php</h1>
+<p>Documentation is available at <a href="../UrbinoCommerce/_includes---common.php.html">common.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;Elenco&nbsp;funzioni&nbsp;comuni</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;Il&nbsp;file&nbsp;'common.php'&nbsp;viene&nbsp;importato&nbsp;da&nbsp;tutte&nbsp;le&nbsp;pagine&nbsp;del&nbsp;sito,&nbsp;in&nbsp;modo</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;tale&nbsp;da&nbsp;ereditare&nbsp;tutte&nbsp;le&nbsp;variabili&nbsp;globali&nbsp;definite&nbsp;nel&nbsp;file&nbsp;'config.php'</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;e&nbsp;le&nbsp;definizioni&nbsp;di&nbsp;classi&nbsp;e&nbsp;funzioni.</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;*&nbsp;PHP&nbsp;Version&nbsp;5</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@category</span><span class="src-doc">&nbsp;Common</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;&nbsp;UrbinoCommerce</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@filesource</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;&nbsp;&nbsp;Ferruccio&nbsp;Vitale&nbsp;&lt;unixo@devzero.it&gt;</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;&nbsp;http://www.opensource.org/licenses/bsd-license.php&nbsp;BSD&nbsp;License</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;&nbsp;SVN:&nbsp;$Id:&nbsp;common.php&nbsp;32&nbsp;2009-09-08&nbsp;14:02:18Z&nbsp;unixo&nbsp;$</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@link</span><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://commerce.devzero.it/</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a19"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'MDB2.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'Log.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'Translation2.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-inc">require_once&nbsp;</span><span class="src-str">'PEAR/Exception.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">dirname</span><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/Basket.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">dirname</span><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/User.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">dirname</span><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/Page.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a26"></a><span class="src-inc">require_once&nbsp;</span><span class="src-id">dirname</span><span class="src-sym">(</span>__FILE__<span class="src-sym">)</span>.<span class="src-str">'/../config.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a28"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a29"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a30"></a><span class="src-doc">&nbsp;*&nbsp;Handler&nbsp;eccezioni</span></div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-doc">&nbsp;*&nbsp;Registra&nbsp;la&nbsp;funzione&nbsp;'errorHandler'&nbsp;come&nbsp;gestore&nbsp;delle&nbsp;eccezioni&nbsp;di&nbsp;tipo</span></div></li>
+<li><div class="src-line"><a name="a33"></a><span class="src-doc">&nbsp;*&nbsp;PEAR_Exception.</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-id">PEAR_Exception</span><span class="src-sym">::</span><span class="src-id">addObserver</span><span class="src-sym">(</span><span class="src-str">'errorHandler'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a36"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-doc">&nbsp;*&nbsp;Handler&nbsp;eccezioni</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-doc">&nbsp;*&nbsp;La&nbsp;funzione&nbsp;viene&nbsp;richiamata&nbsp;qualora&nbsp;venga&nbsp;sollevata&nbsp;un'eccezione&nbsp;di&nbsp;tipo</span></div></li>
+<li><div class="src-line"><a name="a41"></a><span class="src-doc">&nbsp;*&nbsp;PEAR_Exception&nbsp;o&nbsp;sue&nbsp;derivate:&nbsp;compito&nbsp;della&nbsp;funzione&nbsp;e'&nbsp;redirigere&nbsp;la</span></div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-doc">&nbsp;*&nbsp;navigazione&nbsp;dell'utente&nbsp;verso&nbsp;la&nbsp;pagina&nbsp;d'errore&nbsp;contenente&nbsp;il&nbsp;messaggio</span></div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-doc">&nbsp;*&nbsp;dell'eccezione.</span></div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">PEAR_Exception&nbsp;</span><span class="src-doc-var">$pear_exception&nbsp;</span><span class="src-doc">Istanza&nbsp;dell'eccezione</span></div></li>
+<li><div class="src-line"><a name="a46"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">void&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functionerrorHandler">errorHandler</a><span class="src-sym">(</span><span class="src-var">$pear_exception</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a50"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a51"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location:&nbsp;error.php?msg='</span>.<span class="src-var">$pear_exception</span><span class="src-sym">-&gt;</span><span class="src-id">getMessage</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a53"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a54"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a55"></a><span class="src-doc">&nbsp;*&nbsp;Controllo&nbsp;autenticazione&nbsp;ed&nbsp;autorizzazione</span></div></li>
+<li><div class="src-line"><a name="a56"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a57"></a><span class="src-doc">&nbsp;*&nbsp;La&nbsp;funzione&nbsp;verifica&nbsp;se&nbsp;l'utente&nbsp;che&nbsp;ha&nbsp;effettuato&nbsp;la&nbsp;richiesta&nbsp;risulta</span></div></li>
+<li><div class="src-line"><a name="a58"></a><span class="src-doc">&nbsp;*&nbsp;essere&nbsp;autenticato&nbsp;e&nbsp;quindi&nbsp;autorizzato&nbsp;a&nbsp;vedere&nbsp;il&nbsp;contenuto&nbsp;della&nbsp;pagina.</span></div></li>
+<li><div class="src-line"><a name="a59"></a><span class="src-doc">&nbsp;*&nbsp;Il&nbsp;parametro&nbsp;needAdmin&nbsp;eleva&nbsp;ulteriomente&nbsp;il&nbsp;livello&nbsp;di&nbsp;protezione:&nbsp;qualora</span></div></li>
+<li><div class="src-line"><a name="a60"></a><span class="src-doc">&nbsp;*&nbsp;valga&nbsp;true,&nbsp;l'utente&nbsp;deve&nbsp;essere&nbsp;sia&nbsp;autenticato&nbsp;che&nbsp;amministratore.</span></div></li>
+<li><div class="src-line"><a name="a61"></a><span class="src-doc">&nbsp;*&nbsp;Qualora&nbsp;non&nbsp;vengano&nbsp;soddisfatte&nbsp;le&nbsp;suddette&nbsp;condizioni,&nbsp;viene&nbsp;effettuata</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-doc">&nbsp;*&nbsp;una&nbsp;redirezione&nbsp;della&nbsp;navigazione&nbsp;verso&nbsp;la&nbsp;URL&nbsp;specificata.</span></div></li>
+<li><div class="src-line"><a name="a63"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a64"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span><span class="src-doc-var">$needAdmin&nbsp;</span><span class="src-doc">Se&nbsp;vale&nbsp;true,&nbsp;l'utente&nbsp;deve&nbsp;essere&nbsp;un&nbsp;amministratore</span></div></li>
+<li><div class="src-line"><a name="a65"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-var">$link&nbsp;</span><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pagina&nbsp;verso&nbsp;la&nbsp;quale&nbsp;effettuare&nbsp;la&nbsp;redirezione</span></div></li>
+<li><div class="src-line"><a name="a66"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a67"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">void&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a68"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a69"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functionneedAuthenticatedUser">needAuthenticatedUser</a><span class="src-sym">(</span><span class="src-var">$needAdmin&nbsp;</span>=&nbsp;<span class="src-id">false</span><span class="src-sym">,&nbsp;</span><span class="src-var">$link&nbsp;</span>=&nbsp;<span class="src-str">'index.php'</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a70"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a71"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'user'</span><span class="src-sym">]</span><span class="src-sym">)&nbsp;</span>===&nbsp;<span class="src-id">false</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a72"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionredirectToURL">redirectToURL</a><span class="src-sym">(</span><span class="src-var">$link</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a73"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a74"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'user'</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">isDummy</span><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>===&nbsp;<span class="src-id">true</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a75"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionredirectToURL">redirectToURL</a><span class="src-sym">(</span><span class="src-var">$link</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a76"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a77"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$isAdmin&nbsp;</span>=&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'user'</span><span class="src-sym">]</span><span class="src-sym">-&gt;</span><span class="src-id">isAdmin</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a78"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">((</span><span class="src-var">$needAdmin&nbsp;</span>===&nbsp;<span class="src-id">true</span><span class="src-sym">)&nbsp;</span>&amp;&amp;&nbsp;<span class="src-sym">(</span><span class="src-var">$isAdmin&nbsp;</span>===&nbsp;<span class="src-id">false</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a79"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionredirectToURL">redirectToURL</a><span class="src-sym">(</span><span class="src-var">$link</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a80"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a81"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a82"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a83"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a84"></a><span class="src-doc">&nbsp;*&nbsp;Wrapper&nbsp;per&nbsp;interfacciarsi&nbsp;al&nbsp;database&nbsp;tramite&nbsp;istruzioni&nbsp;SQL</span></div></li>
+<li><div class="src-line"><a name="a85"></a><span class="src-doc">&nbsp;*&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a86"></a><span class="src-doc">&nbsp;*&nbsp;E'&nbsp;possibile&nbsp;effettuare&nbsp;una&nbsp;SELECT&nbsp;o&nbsp;una&nbsp;DML&nbsp;(UPDATE,&nbsp;INSERT).&nbsp;All'interno</span></div></li>
+<li><div class="src-line"><a name="a87"></a><span class="src-doc">&nbsp;*&nbsp;della&nbsp;funzione&nbsp;viene&nbsp;fatto&nbsp;uso&nbsp;delle&nbsp;classi&nbsp;DB2&nbsp;(PEAR)&nbsp;per&nbsp;creare&nbsp;lo</span></div></li>
+<li><div class="src-line"><a name="a88"></a><span class="src-doc">&nbsp;*&nbsp;statement&nbsp;e,&nbsp;eventualmente,&nbsp;assegnare&nbsp;i&nbsp;valori&nbsp;alle&nbsp;rispettive</span></div></li>
+<li><div class="src-line"><a name="a89"></a><span class="src-doc">&nbsp;*&nbsp;'bind&nbsp;variables'.</span></div></li>
+<li><div class="src-line"><a name="a90"></a><span class="src-doc">&nbsp;*&nbsp;L'uso&nbsp;di&nbsp;questi&nbsp;accorgimenti&nbsp;previene&nbsp;possibili&nbsp;attacchi&nbsp;di&nbsp;tipo&nbsp;SQL</span></div></li>
+<li><div class="src-line"><a name="a91"></a><span class="src-doc">&nbsp;*&nbsp;injection&nbsp;o&nbsp;XSS&nbsp;stored.</span></div></li>
+<li><div class="src-line"><a name="a92"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a93"></a><span class="src-doc">&nbsp;*&nbsp;Esempio&nbsp;d'utilizzo:</span></div></li>
+<li><div class="src-line"><a name="a94"></a><span class="src-doc">&nbsp;*&nbsp;&lt;code&gt;</span></div></li>
+<li><div class="src-line"><a name="a95"></a><span class="src-doc">&nbsp;*&nbsp;$results&nbsp;=&nbsp;executeQuery('SELECT&nbsp;*&nbsp;FROM&nbsp;tabella&nbsp;WHERE&nbsp;campo=?',&nbsp;$valore);</span></div></li>
+<li><div class="src-line"><a name="a96"></a><span class="src-doc">&nbsp;*&nbsp;echo&nbsp;'Numero&nbsp;di&nbsp;record&nbsp;trovati:&nbsp;'.count($results);</span></div></li>
+<li><div class="src-line"><a name="a97"></a><span class="src-doc">&nbsp;*&nbsp;&lt;/code&gt;</span></div></li>
+<li><div class="src-line"><a name="a98"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a99"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$sql&nbsp;</span><span class="src-doc">&nbsp;&nbsp;&nbsp;Comando&nbsp;SQL&nbsp;da&nbsp;eseguire</span></div></li>
+<li><div class="src-line"><a name="a100"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">array&nbsp;</span><span class="src-doc">&nbsp;</span><span class="src-doc-var">$values&nbsp;</span><span class="src-doc">Valore&nbsp;delle&nbsp;bind&nbsp;variables</span></div></li>
+<li><div class="src-line"><a name="a101"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a102"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">array&nbsp;</span><span class="src-doc">Result&nbsp;set&nbsp;ottenuto&nbsp;dalla&nbsp;query&nbsp;(se&nbsp;fosse&nbsp;una&nbsp;SELECT)</span></div></li>
+<li><div class="src-line"><a name="a103"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a104"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functionexecuteQuery">executeQuery</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">,&nbsp;</span><span class="src-var">$values&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">))</span></div></li>
+<li><div class="src-line"><a name="a105"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a106"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">global&nbsp;</span><span class="src-var">$db_conn</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a107"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$results&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a109"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/sizeof">sizeof</a><span class="src-sym">(</span><span class="src-var">$values</span><span class="src-sym">)&nbsp;</span>&gt;&nbsp;<span class="src-num">0</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a110"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$statement&nbsp;</span>=&nbsp;<span class="src-var">$db_conn</span><span class="src-sym">-&gt;</span><span class="src-id">prepare</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">,&nbsp;</span><span class="src-id">null</span><span class="src-sym">,&nbsp;</span><span class="src-id">MDB2_PREPARE_RESULT</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a111"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$resultset&nbsp;</span>=&nbsp;<span class="src-var">$statement</span><span class="src-sym">-&gt;</span><span class="src-id">execute</span><span class="src-sym">(</span><span class="src-var">$values</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a112"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$statement</span><span class="src-sym">-&gt;</span><span class="src-id">free</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a113"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a114"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$resultset&nbsp;</span>=&nbsp;<span class="src-var">$db_conn</span><span class="src-sym">-&gt;</span><span class="src-id">query</span><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a115"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a116"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-id">PEAR</span><span class="src-sym">::</span><span class="src-id">isError</span><span class="src-sym">(</span><span class="src-var">$resultset</span><span class="src-sym">)&nbsp;</span>===&nbsp;<span class="src-id">true</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a117"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;<span class="src-key">new&nbsp;</span><span class="src-id">PEAR_Exception</span><span class="src-sym">(</span><span class="src-var">$resultset</span><span class="src-sym">-&gt;</span><span class="src-id">getMessage</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">,&nbsp;</span><span class="src-id"><a href="../UrbinoCommerce/_config.php.html#defineERR_DATABASE">ERR_DATABASE</a></span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a119"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/substr">substr</a><span class="src-sym">(</span><a href="http://www.php.net/strtolower">strtolower</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">)</span><span class="src-sym">,&nbsp;</span><span class="src-num">0</span><span class="src-sym">,&nbsp;</span><span class="src-num">6</span><span class="src-sym">)&nbsp;</span>===&nbsp;<span class="src-str">'select'</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">while&nbsp;</span><span class="src-sym">((</span><span class="src-var">$row&nbsp;</span>=&nbsp;<span class="src-var">$resultset</span><span class="src-sym">-&gt;</span><span class="src-id">fetchRow</span><span class="src-sym">(</span><span class="src-id">MDB2_FETCHMODE_ASSOC</span><span class="src-sym">))&nbsp;</span>!==&nbsp;<span class="src-id">null</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a122"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$results</span><span class="src-sym">[</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$row</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a123"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a124"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a125"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$resultset</span><span class="src-sym">-&gt;</span><span class="src-id">free</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a126"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a127"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$results</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a128"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a129"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a130"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a131"></a><span class="src-doc">&nbsp;*&nbsp;Formattazione&nbsp;valuta</span></div></li>
+<li><div class="src-line"><a name="a132"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a133"></a><span class="src-doc">&nbsp;*&nbsp;Formatta&nbsp;un&nbsp;numero&nbsp;usando&nbsp;la&nbsp;virgola&nbsp;come&nbsp;separatore&nbsp;decimale,&nbsp;il&nbsp;punto</span></div></li>
+<li><div class="src-line"><a name="a134"></a><span class="src-doc">&nbsp;*&nbsp;come&nbsp;separatore&nbsp;delle&nbsp;migliaia&nbsp;e&nbsp;con&nbsp;due&nbsp;caratteri&nbsp;decimali.</span></div></li>
+<li><div class="src-line"><a name="a135"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a136"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">integer&nbsp;</span><span class="src-doc-var">$num&nbsp;</span><span class="src-doc">Numero&nbsp;da&nbsp;formattare</span></div></li>
+<li><div class="src-line"><a name="a137"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a138"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">integer&nbsp;</span><span class="src-doc">Numero&nbsp;formattato</span></div></li>
+<li><div class="src-line"><a name="a139"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a140"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functioncurrency">currency</a><span class="src-sym">(</span><span class="src-var">$num</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a141"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a142"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><a href="http://www.php.net/number_format">number_format</a><span class="src-sym">(</span><span class="src-var">$num</span><span class="src-sym">,&nbsp;</span><span class="src-num">2</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;,&quot;</span><span class="src-sym">,&nbsp;</span><span class="src-str">&quot;.&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a143"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a144"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a145"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a146"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a147"></a><span class="src-doc">&nbsp;*&nbsp;Valutazione&nbsp;del&nbsp;prodotto</span></div></li>
+<li><div class="src-line"><a name="a148"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a149"></a><span class="src-doc">&nbsp;*&nbsp;Stampa&nbsp;la&nbsp;valutazione&nbsp;di&nbsp;un&nbsp;prodotto/recensione&nbsp;in&nbsp;una&nbsp;scala&nbsp;da&nbsp;1&nbsp;a&nbsp;5:&nbsp;fa</span></div></li>
+<li><div class="src-line"><a name="a150"></a><span class="src-doc">&nbsp;*&nbsp;uso&nbsp;di&nbsp;una&nbsp;particolare&nbsp;immagine&nbsp;a&nbsp;forma&nbsp;di&nbsp;'stella',&nbsp;da&nbsp;ripetere&nbsp;fino&nbsp;a</span></div></li>
+<li><div class="src-line"><a name="a151"></a><span class="src-doc">&nbsp;*&nbsp;rappresentare&nbsp;il&nbsp;valore&nbsp;di&nbsp;rating.</span></div></li>
+<li><div class="src-line"><a name="a152"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a153"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">integer&nbsp;</span><span class="src-doc-var">$value&nbsp;</span><span class="src-doc">Valore&nbsp;di&nbsp;rating</span></div></li>
+<li><div class="src-line"><a name="a154"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">boolean&nbsp;</span><span class="src-doc-var">$print&nbsp;</span><span class="src-doc">Se&nbsp;vale&nbsp;true,&nbsp;stampa&nbsp;il&nbsp;rating&nbsp;in&nbsp;output</span></div></li>
+<li><div class="src-line"><a name="a155"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">integer&nbsp;</span><span class="src-doc-var">$size&nbsp;</span><span class="src-doc">&nbsp;Dimensione&nbsp;dell'immagine&nbsp;(width)</span></div></li>
+<li><div class="src-line"><a name="a156"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a157"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc">Restituisce&nbsp;la&nbsp;stringa&nbsp;HTML&nbsp;del&nbsp;rating</span></div></li>
+<li><div class="src-line"><a name="a158"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a159"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functionprintRating">printRating</a><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">,&nbsp;</span><span class="src-var">$print&nbsp;</span>=&nbsp;<span class="src-id">true</span><span class="src-sym">,&nbsp;</span><span class="src-var">$size&nbsp;</span>=&nbsp;<span class="src-num">19</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a160"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a161"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$html&nbsp;</span>=&nbsp;<span class="src-str">&quot;&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a162"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">for&nbsp;</span><span class="src-sym">(</span><span class="src-var">$i</span>=<span class="src-num">0</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>&lt;<span class="src-var">$value</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>++<span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a163"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$html&nbsp;</span>.=&nbsp;<span class="src-str">'&lt;img&nbsp;width=&quot;'</span>.<span class="src-var">$size</span>.<span class="src-str">'&quot;&nbsp;src=&quot;'</span>.<span class="src-id"><a href="../UrbinoCommerce/_config.php.html#defineCONTENT_URL">CONTENT_URL</a></span>.</div></li>
+<li><div class="src-line"><a name="a164"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'/images/blue_star.gif&quot;&nbsp;alt=&quot;bstar&quot;/&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a165"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a166"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">for&nbsp;</span><span class="src-sym">(</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>&lt;<span class="src-num">5</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>++<span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a167"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$html&nbsp;</span>.=&nbsp;<span class="src-str">'&lt;img&nbsp;width=&quot;'</span>.<span class="src-var">$size</span>.<span class="src-str">'&quot;&nbsp;src=&quot;'</span>.<span class="src-id"><a href="../UrbinoCommerce/_config.php.html#defineCONTENT_URL">CONTENT_URL</a></span>.</div></li>
+<li><div class="src-line"><a name="a168"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'/images/gray_star.gif&quot;&nbsp;alt=&quot;bstar&quot;/&gt;'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a169"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a170"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a171"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$print</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a172"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-var">$html</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a173"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a174"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$html</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a175"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a176"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a177"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a178"></a><span class="src-doc">&nbsp;*&nbsp;Generazione&nbsp;ID&nbsp;univoco</span></div></li>
+<li><div class="src-line"><a name="a179"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a180"></a><span class="src-doc">&nbsp;*&nbsp;Genera&nbsp;un&nbsp;identificativo&nbsp;univoco&nbsp;da&nbsp;associare&nbsp;all'utente&nbsp;che&nbsp;ha&nbsp;appena</span></div></li>
+<li><div class="src-line"><a name="a181"></a><span class="src-doc">&nbsp;*&nbsp;terminato&nbsp;la&nbsp;procedura&nbsp;di&nbsp;registrazione:&nbsp;tale&nbsp;codice&nbsp;viene&nbsp;inviato&nbsp;via</span></div></li>
+<li><div class="src-line"><a name="a182"></a><span class="src-doc">&nbsp;*&nbsp;mail&nbsp;all'indirizzo&nbsp;di&nbsp;posta&nbsp;specificato&nbsp;dall'utente,&nbsp;il&nbsp;quale,&nbsp;visitando&nbsp;il</span></div></li>
+<li><div class="src-line"><a name="a183"></a><span class="src-doc">&nbsp;*&nbsp;link&nbsp;indicato,&nbsp;provvedera'&nbsp;ad&nbsp;attivare&nbsp;l'account.</span></div></li>
+<li><div class="src-line"><a name="a184"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a185"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc">Codice&nbsp;univoco</span></div></li>
+<li><div class="src-line"><a name="a186"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a187"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functiongenerateSecureCode">generateSecureCode</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a188"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a189"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><a href="http://www.php.net/md5">md5</a><span class="src-sym">(</span><a href="http://www.php.net/uniqid">uniqid</a><span class="src-sym">(</span><a href="http://www.php.net/mt_rand">mt_rand</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">,&nbsp;</span><span class="src-id">true</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a190"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a191"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a192"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a193"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a194"></a><span class="src-doc">&nbsp;*&nbsp;Generazione&nbsp;password</span></div></li>
+<li><div class="src-line"><a name="a195"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a196"></a><span class="src-doc">&nbsp;*&nbsp;Quando&nbsp;un'utente&nbsp;dimentica&nbsp;la&nbsp;propria&nbsp;password&nbsp;d'accesso,&nbsp;il&nbsp;sistema&nbsp;puo'</span></div></li>
+<li><div class="src-line"><a name="a197"></a><span class="src-doc">&nbsp;*&nbsp;generare&nbsp;una&nbsp;nuova&nbsp;password&nbsp;che&nbsp;sia&nbsp;comunque&nbsp;conforme&nbsp;alle&nbsp;linee&nbsp;guida</span></div></li>
+<li><div class="src-line"><a name="a198"></a><span class="src-doc">&nbsp;*&nbsp;del&nbsp;sito.&nbsp;La&nbsp;password&nbsp;verra'&nbsp;dunque&nbsp;inviata&nbsp;via&nbsp;mail&nbsp;all'utente.</span></div></li>
+<li><div class="src-line"><a name="a199"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a200"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">integer&nbsp;</span><span class="src-doc-var">$length&nbsp;</span><span class="src-doc">Lunghezza&nbsp;della&nbsp;password&nbsp;da&nbsp;generare</span></div></li>
+<li><div class="src-line"><a name="a201"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a202"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc">Password&nbsp;generata</span></div></li>
+<li><div class="src-line"><a name="a203"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a204"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functiongeneratePassword">generatePassword</a><span class="src-sym">(</span><span class="src-var">$length&nbsp;</span>=&nbsp;<span class="src-num">8</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a205"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a206"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$chars&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">'zaqwsxcderfvbgtyhnmjuiklop0147852369_-.#$%@'</span>.</div></li>
+<li><div class="src-line"><a name="a207"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-str">'QAZWSXEDCRFVTGBYHNUJMIKLOP'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a208"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$password&nbsp;</span>=&nbsp;<span class="src-str">''</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a209"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">for&nbsp;</span><span class="src-sym">(</span><span class="src-var">$i&nbsp;</span>=&nbsp;<span class="src-num">0</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i&nbsp;</span>&lt;&nbsp;<span class="src-var">$length</span><span class="src-sym">;&nbsp;</span><span class="src-var">$i</span>++<span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a210"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$password&nbsp;</span>.=&nbsp;<span class="src-var">$chars</span><span class="src-sym">[</span><span class="src-sym">(</span><a href="http://www.php.net/rand">rand</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>%&nbsp;<a href="http://www.php.net/strlen">strlen</a><span class="src-sym">(</span><span class="src-var">$chars</span><span class="src-sym">))</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a211"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a212"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$password</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a213"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a214"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a215"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a216"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a217"></a><span class="src-doc">&nbsp;*&nbsp;Funzione&nbsp;di&nbsp;redirezione</span></div></li>
+<li><div class="src-line"><a name="a218"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a219"></a><span class="src-doc">&nbsp;*&nbsp;Funzione&nbsp;per&nbsp;redirigere&nbsp;la&nbsp;navigazione&nbsp;dell'utente&nbsp;alla&nbsp;pagina&nbsp;richiesta:</span></div></li>
+<li><div class="src-line"><a name="a220"></a><span class="src-doc">&nbsp;*&nbsp;l'operazione&nbsp;viene&nbsp;effettuata&nbsp;inviando&nbsp;al&nbsp;browser&nbsp;l'header&nbsp;'Location'&nbsp;e</span></div></li>
+<li><div class="src-line"><a name="a221"></a><span class="src-doc">&nbsp;*&nbsp;terminando&nbsp;successivamente&nbsp;lo&nbsp;script&nbsp;con&nbsp;la&nbsp;funzione&nbsp;exit(),&nbsp;in&nbsp;modo&nbsp;tale</span></div></li>
+<li><div class="src-line"><a name="a222"></a><span class="src-doc">&nbsp;*&nbsp;che&nbsp;non&nbsp;venga&nbsp;generato&nbsp;ulteriore&nbsp;output.</span></div></li>
+<li><div class="src-line"><a name="a223"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a224"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$url&nbsp;</span><span class="src-doc">Pagina&nbsp;da&nbsp;visitare</span></div></li>
+<li><div class="src-line"><a name="a225"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a226"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">void&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a227"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a228"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functionredirectToURL">redirectToURL</a><span class="src-sym">(</span><span class="src-var">$url</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a229"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a230"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/header">header</a><span class="src-sym">(</span><span class="src-str">'Location:&nbsp;'</span>.<span class="src-id">SERVER_URL</span>.<span class="src-var">$url</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a231"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">exit</span><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a232"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a233"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a234"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a235"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a236"></a><span class="src-doc">&nbsp;*&nbsp;Lettura&nbsp;parametro&nbsp;di&nbsp;configurazione</span></div></li>
+<li><div class="src-line"><a name="a237"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a238"></a><span class="src-doc">&nbsp;*&nbsp;Dato&nbsp;un&nbsp;parametro&nbsp;di&nbsp;configurazione&nbsp;salvato&nbsp;nella&nbsp;tabella&nbsp;'config'&nbsp;della</span></div></li>
+<li><div class="src-line"><a name="a239"></a><span class="src-doc">&nbsp;*&nbsp;base&nbsp;dati,&nbsp;la&nbsp;funzione&nbsp;ne&nbsp;restituisce&nbsp;il&nbsp;valore;&nbsp;se&nbsp;il&nbsp;parametro&nbsp;contiene</span></div></li>
+<li><div class="src-line"><a name="a240"></a><span class="src-doc">&nbsp;*&nbsp;il&nbsp;carattere&nbsp;'%',&nbsp;la&nbsp;funzione&nbsp;restituisce&nbsp;un&nbsp;vettore&nbsp;di&nbsp;parametri&nbsp;che</span></div></li>
+<li><div class="src-line"><a name="a241"></a><span class="src-doc">&nbsp;*&nbsp;corrispondono&nbsp;all'espressione&nbsp;regolare.</span></div></li>
+<li><div class="src-line"><a name="a242"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a243"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$attrib&nbsp;</span><span class="src-doc">Parametro&nbsp;da&nbsp;ricercare</span></div></li>
+<li><div class="src-line"><a name="a244"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a245"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">mixed&nbsp;</span><span class="src-doc">Valore&nbsp;del&nbsp;parametro&nbsp;o&nbsp;vettore&nbsp;di&nbsp;valori</span></div></li>
+<li><div class="src-line"><a name="a246"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a247"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functiongetConfigValue">getConfigValue</a><span class="src-sym">(</span><span class="src-var">$attrib</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a248"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a249"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/strstr">strstr</a><span class="src-sym">(</span><span class="src-var">$attrib</span><span class="src-sym">,&nbsp;</span><span class="src-str">'%'</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a250"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$sql&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">'SELECT&nbsp;*&nbsp;FROM&nbsp;config&nbsp;WHERE&nbsp;attrib&nbsp;LIKE&nbsp;?'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a251"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$records&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionexecuteQuery">executeQuery</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">,&nbsp;</span><span class="src-var">$attrib</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a252"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">foreach&nbsp;</span><span class="src-sym">(</span><span class="src-var">$records&nbsp;</span><span class="src-key">as&nbsp;</span><span class="src-var">$row</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a253"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$results</span><span class="src-sym">[</span><span class="src-var">$row</span><span class="src-sym">[</span><span class="src-str">'attrib'</span><span class="src-sym">]]&nbsp;</span>=&nbsp;<span class="src-var">$row</span><span class="src-sym">[</span><span class="src-str">'value'</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a254"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a255"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$results</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a256"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a257"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$sql&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-str">'SELECT&nbsp;*&nbsp;FROM&nbsp;config&nbsp;WHERE&nbsp;attrib&nbsp;=&nbsp;?'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a258"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$records&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionexecuteQuery">executeQuery</a><span class="src-sym">(</span><span class="src-var">$sql</span><span class="src-sym">,&nbsp;</span><span class="src-var">$attrib</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a259"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$records</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'value'</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a260"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a261"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a262"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a263"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a264"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a265"></a><span class="src-doc">&nbsp;*&nbsp;Impostazione&nbsp;parametro&nbsp;di&nbsp;configurazione</span></div></li>
+<li><div class="src-line"><a name="a266"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a267"></a><span class="src-doc">&nbsp;*&nbsp;Dato&nbsp;un&nbsp;parametro&nbsp;di&nbsp;configurazione&nbsp;salvato&nbsp;nella&nbsp;tabella&nbsp;'config'&nbsp;della</span></div></li>
+<li><div class="src-line"><a name="a268"></a><span class="src-doc">&nbsp;*&nbsp;base&nbsp;dati,&nbsp;la&nbsp;funzione&nbsp;ne&nbsp;aggiorna&nbsp;il&nbsp;valore.</span></div></li>
+<li><div class="src-line"><a name="a269"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a270"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$attrib&nbsp;</span><span class="src-doc">Parametro&nbsp;da&nbsp;modificare</span></div></li>
+<li><div class="src-line"><a name="a271"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@param&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$value&nbsp;</span><span class="src-doc">&nbsp;Valore&nbsp;del&nbsp;parametro</span></div></li>
+<li><div class="src-line"><a name="a272"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a273"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">void&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a274"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a275"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functionsetConfigValue">setConfigValue</a><span class="src-sym">(</span><span class="src-var">$attrib</span><span class="src-sym">,&nbsp;</span><span class="src-var">$value</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a276"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a277"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionexecuteQuery">executeQuery</a><span class="src-sym">(</span><span class="src-str">'UPDATE&nbsp;config&nbsp;SET&nbsp;value=?&nbsp;WHERE&nbsp;attrib=?'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a278"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-var">$value</span><span class="src-sym">,&nbsp;</span><span class="src-var">$attrib</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a279"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a280"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a281"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a282"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a283"></a><span class="src-doc">&nbsp;*&nbsp;Controllo&nbsp;esistenza&nbsp;istanza&nbsp;FV_User</span></div></li>
+<li><div class="src-line"><a name="a284"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a285"></a><span class="src-doc">&nbsp;*&nbsp;Diverse&nbsp;pagine&nbsp;del&nbsp;sito&nbsp;necessitano&nbsp;di&nbsp;un'istanza&nbsp;della&nbsp;classe&nbsp;FV_User,&nbsp;sia</span></div></li>
+<li><div class="src-line"><a name="a286"></a><span class="src-doc">&nbsp;*&nbsp;che&nbsp;si&nbsp;tratti&nbsp;di&nbsp;un&nbsp;utente&nbsp;regolarmente&nbsp;autenticato&nbsp;che&nbsp;di&nbsp;un&nbsp;visitatore</span></div></li>
+<li><div class="src-line"><a name="a287"></a><span class="src-doc">&nbsp;*&nbsp;che&nbsp;sta&nbsp;visionando&nbsp;il&nbsp;catalogo&nbsp;e&nbsp;inserisce&nbsp;i&nbsp;prodotti&nbsp;nel&nbsp;carrello&nbsp;senza</span></div></li>
+<li><div class="src-line"><a name="a288"></a><span class="src-doc">&nbsp;*&nbsp;essere&nbsp;ancora&nbsp;identificato/registrato.</span></div></li>
+<li><div class="src-line"><a name="a289"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a290"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">void&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a291"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a292"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functioncheckSessionUser">checkSessionUser</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a293"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a294"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'user'</span><span class="src-sym">]</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a295"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'user'</span><span class="src-sym">]&nbsp;</span>=<span class="src-sym">&amp;&nbsp;</span><span class="src-id"><a href="../UrbinoCommerce/FV_User.html">FV_User</a></span><span class="src-sym">::</span><a href="../UrbinoCommerce/FV_User.html#methoddummyUser">dummyUser</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a296"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a297"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a298"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a299"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a300"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a301"></a><span class="src-doc">&nbsp;*&nbsp;Impostazioni&nbsp;SMTP</span></div></li>
+<li><div class="src-line"><a name="a302"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a303"></a><span class="src-doc">&nbsp;*&nbsp;Le&nbsp;classi&nbsp;o&nbsp;le&nbsp;pagine&nbsp;che&nbsp;necessitano&nbsp;di&nbsp;inviare&nbsp;una&nbsp;mail&nbsp;faranno&nbsp;uso&nbsp;di</span></div></li>
+<li><div class="src-line"><a name="a304"></a><span class="src-doc">&nbsp;*&nbsp;questa&nbsp;funzione&nbsp;per&nbsp;ottenere&nbsp;le&nbsp;impostazioni&nbsp;del&nbsp;server&nbsp;SMTP.</span></div></li>
+<li><div class="src-line"><a name="a305"></a><span class="src-doc">&nbsp;*&nbsp;Il&nbsp;vettore&nbsp;associativo&nbsp;restituito&nbsp;conterra'&nbsp;il&nbsp;nome&nbsp;del&nbsp;server,&nbsp;le</span></div></li>
+<li><div class="src-line"><a name="a306"></a><span class="src-doc">&nbsp;*&nbsp;credenziali&nbsp;per&nbsp;l'smtp-auth&nbsp;e&nbsp;la&nbsp;stringa&nbsp;di&nbsp;HELO&nbsp;da&nbsp;inviare.</span></div></li>
+<li><div class="src-line"><a name="a307"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a308"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@return&nbsp;</span><span class="src-doc-type">mixed&nbsp;</span><span class="src-doc">Vettore&nbsp;associativo&nbsp;contenente&nbsp;i&nbsp;parametri&nbsp;del&nbsp;server&nbsp;SMTP</span></div></li>
+<li><div class="src-line"><a name="a309"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a310"></a><span class="src-key">function&nbsp;</span><a href="../UrbinoCommerce/_includes---common.php.html#functiongetSMTPSettings">getSMTPSettings</a><span class="src-sym">(</span><span class="src-sym">)</span></div></li>
+<li><div class="src-line"><a name="a311"></a><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a312"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$smtp</span><span class="src-sym">[</span><span class="src-str">'host'</span><span class="src-sym">]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functiongetConfigValue">getConfigValue</a><span class="src-sym">(</span><span class="src-str">'smtp_host'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a313"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$smtp</span><span class="src-sym">[</span><span class="src-str">'auth'</span><span class="src-sym">]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-id">true</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a314"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$smtp</span><span class="src-sym">[</span><span class="src-str">'username'</span><span class="src-sym">]&nbsp;&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functiongetConfigValue">getConfigValue</a><span class="src-sym">(</span><span class="src-str">'smtp_user'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a315"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$smtp</span><span class="src-sym">[</span><span class="src-str">'password'</span><span class="src-sym">]&nbsp;&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functiongetConfigValue">getConfigValue</a><span class="src-sym">(</span><span class="src-str">'smtp_pass'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a316"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$smtp</span><span class="src-sym">[</span><span class="src-str">'localhost'</span><span class="src-sym">]&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functiongetConfigValue">getConfigValue</a><span class="src-sym">(</span><span class="src-str">'smtp_helo'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a317"></a>&nbsp;&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a318"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">return&nbsp;</span><span class="src-var">$smtp</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a319"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a320"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a321"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 09 Sep 2009 14:48:14 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

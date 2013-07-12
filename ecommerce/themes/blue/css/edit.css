@@ -1,0 +1,42 @@
+.usertable {
+    padding-top: 20px;
+    padding-bottom: 120px;
+}
+
+.input_label {
+    color: #777;
+    font-size: 16px;
+    padding-bottom: 16px;
+}
+
+.form_header {
+    font-size: 14px;
+    background: rgb(138,158,184) repeat-x;
+    color: white;
+    height: 30px;
+}
+
+#editform {
+    font-size: 11px;
+    line-height: 19px;
+}
+
+#editform input {
+    font-size: 20px;
+    width: 97%;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+}
+
+#editform .mysubmit {
+    font-size: 14px;
+    width: 47%;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+}

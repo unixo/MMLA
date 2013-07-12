@@ -1,0 +1,88 @@
+#categoryform {
+    font-size: 11px;
+    line-height: 19px;
+}
+
+#categoryform input {
+    font-size: 20px;
+    width: 97%;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+}
+
+#categoryform .mysubmit {
+    font-size: 14px;
+    width: 47%;
+    padding: 3px;
+    margin-top: 2px;
+    margin-right: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #e5e5e5;
+}
+
+.input_label {
+    color: #777;
+    font-size: 16px;
+    padding-bottom: 16px;
+}
+
+.form_header {
+    font-size: 14px;
+    background: rgb(138,158,184) repeat-x;
+    color: white;
+    height: 30px;
+}
+
+.categorytable {
+    padding-top: 20px;
+    padding-bottom: 120px;
+}
+
+/* -------- */
+
+.cat_block {
+    position: relative;
+    float: left;
+    width: 165px;
+    height: 200px;
+    background-color: rgb(148, 187, 204);
+    border: 1px solid gray;
+    margin-left: 11px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.cat_block A:link {
+    color: white;
+}
+
+.cat_block A:visited {
+    color: white;
+}
+
+.cat_block .catname {
+    background: url(../images/menu_bgx.gif) repeat-x;
+    display: block;
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    height: 25px;
+}
+
+.cat_block .catsvg {
+    background-color: rgb(227, 236, 241);
+    height: 130px;
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+.cat_block .catcount {
+    height: 30px;
+    font-size: 14px;
+    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin-top: 3px;
+}

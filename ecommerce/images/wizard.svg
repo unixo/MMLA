@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Sodipodi ("http://www.sodipodi.com/") -->
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.0"
+   x="0"
+   y="0"
+   width="86.916977"
+   height="86.161774"
+   id="svg1"
+   sodipodi:version="0.32"
+   inkscape:version="0.46"
+   sodipodi:docname="wizard.svg"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <sodipodi:namedview
+     inkscape:window-height="786"
+     inkscape:window-width="873"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     showgrid="false"
+     inkscape:zoom="1.1382857"
+     inkscape:cx="218.75"
+     inkscape:cy="218.75"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:current-layer="svg1" />
+  <defs
+     id="defs3">
+    <inkscape:perspective
+       sodipodi:type="inkscape:persp3d"
+       inkscape:vp_x="0 : 218.75 : 1"
+       inkscape:vp_y="0 : 1000 : 0"
+       inkscape:vp_z="437.5 : 218.75 : 1"
+       inkscape:persp3d-origin="218.75 : 145.83333 : 1"
+       id="perspective25" />
+    <linearGradient
+       id="linearGradient580">
+      <stop
+         style="stop-color:#ffff8a;stop-opacity:0.6667;"
+         offset="0"
+         id="stop581" />
+      <stop
+         style="stop-color:#000000;stop-opacity:0.3961;"
+         offset="1"
+         id="stop582" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient53">
+      <stop
+         style="stop-color:#faff00;stop-opacity:1;"
+         offset="0"
+         id="stop54" />
+      <stop
+         style="stop-color:#02ff00;stop-opacity:1;"
+         offset="1"
+         id="stop55" />
+    </linearGradient>
+    <linearGradient
+       id="linearGradient48">
+      <stop
+         style="stop-color:#000f67;stop-opacity:1;"
+         offset="0"
+         id="stop49" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:1;"
+         offset="1"
+         id="stop50" />
+    </linearGradient>
+    <linearGradient
+       x1="0.28467101"
+       y1="0.35156301"
+       x2="0.57664198"
+       y2="0.46875"
+       id="linearGradient51"
+       xlink:href="#linearGradient53" />
+    <linearGradient
+       x1="0.13846301"
+       y1="0.38281101"
+       x2="0.430769"
+       y2="0.53906298"
+       id="linearGradient52"
+       xlink:href="#linearGradient53" />
+    <linearGradient
+       x1="0.101911"
+       y1="0.46540901"
+       x2="0.94267499"
+       y2="0.45282999"
+       id="linearGradient32"
+       xlink:href="#linearGradient48" />
+    <linearGradient
+       x1="-6.8458159e-09"
+       y1="-4.1814939e-08"
+       x2="1"
+       y2="1"
+       id="linearGradient33"
+       xlink:href="#linearGradient48" />
+    <radialGradient
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.5"
+       id="radialGradient579"
+       xlink:href="#linearGradient53" />
+  </defs>
+  <path
+     d="M 59.761011,63.528591 L 34.094251,51.432641 L 10.819451,68.733821 L 12.963511,37.093471 L 1.8590113,26.831721 L 1.8590113,14.240021 L 18.354641,9.6916413 L 20.982051,1.8590113 L 40.018311,1.8590113 L 42.831611,7.0890313 L 70.555661,8.7249613 L 52.560441,32.879711 L 59.761011,63.528591 z"
+     style="font-size:12px;fill:#ffff80;fill-opacity:1;fill-rule:evenodd;stroke:#007800;stroke-width:3.71802258"
+     id="path666" />
+  <rect
+     width="19.025097"
+     height="0"
+     x="-109.42767"
+     y="94.140465"
+     style="font-size:12px;fill:#808080;fill-opacity:1;fill-rule:evenodd"
+     id="rect645" />
+  <path
+     d="M 26.484841,18.629931 C 23.572611,20.393161 23.949731,25.338781 27.343831,29.725361 L 69.204411,83.869301 L 84.624501,83.869301 L 37.882301,23.403551 C 34.488211,19.016981 29.397061,16.888211 26.484841,18.629931 z"
+     style="font-size:12px;fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:4.58495045"
+     id="path656" />
+  <path
+     d="M 36.268361,43.702151 L 67.318091,83.869301 L 84.096451,83.311401 L 49.100101,37.016531 L 36.268361,43.702151 z"
+     style="font-size:12px;fill-opacity:1;fill-rule:evenodd"
+     id="path644" />
+  <metadata
+     id="metadata22">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>Lemon SVG theme</dc:title>
+        <dc:description />
+        <dc:subject>
+          <rdf:Bag>
+            <rdf:li>lemon_theme_icon</rdf:li>
+            <rdf:li>icon</rdf:li>
+          </rdf:Bag>
+        </dc:subject>
+        <dc:publisher>
+          <cc:Agent
+             rdf:about="">
+            <dc:title>Open Clip Art Library</dc:title>
+          </cc:Agent>
+        </dc:publisher>
+        <dc:creator>
+          <cc:Agent
+             rdf:about="">
+            <dc:title>Jose Hevia</dc:title>
+          </cc:Agent>
+        </dc:creator>
+        <dc:rights>
+          <cc:Agent
+             rdf:about="">
+            <dc:title />
+          </cc:Agent>
+        </dc:rights>
+        <dc:date />
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="Public Domain">
+          <dc:date>1</dc:date>
+        </cc:license>
+        <dc:language>en</dc:language>
+      </cc:Work>
+      <cc:License
+         rdf:about="Public Domain">
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Reproduction" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/Distribution" />
+        <cc:permits
+           rdf:resource="http://web.resource.org/cc/DerivativeWorks" />
+      </cc:License>
+    </rdf:RDF>
+  </metadata>
+</svg>

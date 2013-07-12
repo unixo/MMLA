@@ -1,0 +1,301 @@
+body {
+    margin:10px;
+    font:11px Verdana, Arial, Helvetica, sans-serif;
+}
+
+table.main_table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 960px;
+    background-color: white;
+    border: 1px solid rgb(200, 200, 200);   
+    border-width: 1px;
+}
+
+table.central_box {
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    vertical-align: top;
+}
+
+.site_title {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 3.0em;
+    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+    margin-top: 15px;
+    margin-left: -20px;
+}
+
+.showcell {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.showcell_price {
+    vertical-align: middle;
+    text-align: center;
+    font-size: 13px;    
+    color: rgb(128, 128, 128);
+}
+
+.menu {
+    border-color: inherit;
+    display: table-row;
+    vertical-align: inherit;
+}
+
+.menu td {
+    display: table-cell;
+    vertical-align: inherit;
+    background: url(../images/menu_bgx.gif) repeat-x;
+    height: 37px;
+}
+
+.menu ul {
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    list-style-type: disc;
+}
+
+.menu li {
+    display: inline;
+    list-style: none;
+    padding: 0px 14px;
+    color: white;
+    font: normal normal bold 14px/normal Arial, Helvetica, sans-serif;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+.footer {
+    border-color: inherit;
+    display: table-row;
+    vertical-align: inherit;
+}
+
+.footer td {
+    background-color: rgb(153, 168, 190);
+    line-height: 18px;
+    padding: 24px;
+    display: table-cell;
+    vertical-align: top;        
+}
+
+A:link {
+    color: rgb(51,51,51);
+    text-decoration: none;
+}
+A:visited {
+    color: rgb(51,51,51);
+    text-decoration: none;
+}
+A:active {
+    color: #da6805;
+    text-decoration: none;
+}
+A:hover {
+    color: #0066CC;
+    text-decoration: none;
+}
+
+A.lmenu:link {
+    color: #fff;
+    text-decoration: none;
+}
+A.lmenu:visited {
+    color: #fff;
+    text-decoration: none;
+}
+A.lmenu:active {
+    color: #fff;
+    text-decoration: none;
+}
+A.lmenu:hover {
+    color: #0066CC;
+    text-decoration: none;
+}
+
+.leftside {
+    width: 180px;
+    display: table-cell;
+}
+
+.leftside h2 {
+    display: block;
+    color: rgb(44, 74, 119);
+    font: normal normal bold 14px/normal Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.leftside ul {
+    border-bottom: 2px solid rgb(44, 74, 119);;
+    margin-bottom: 12px;
+    padding-bottom: 4px;
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    list-style-type: disc;
+}
+
+.leftside li {
+    background: url(../images/bullet.gif) no-repeat;
+    line-height: 16px;
+    list-style: none;
+    padding-left: 12px;
+    display: list-item;
+}
+
+table.mincart {
+    border-collapse: separate;
+    display: table;
+    border-spacing: 2px 2px;
+    border: 1px dotted rgb(230, 157, 1);
+    background-color: white;
+}
+
+.mincart tbody {
+    border-color: inherit;
+    display: table-row-group;
+    vertical-align: middle;
+}
+
+.mincart tr {
+    border-color: inherit;
+    display: table-row;
+    vertical-align: inherit;
+}
+
+.mincart td {
+    background-color: rgb(240, 240, 240);
+    text-align: -webkit-center;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+h1.page_title {
+    border-bottom: 1px solid rgb(44, 74, 119);
+    color: rgb(44, 74, 119);
+    font: normal normal bold 24px/normal Arial, Helvetica, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    margin-top: 10px;
+    display: block;
+}
+
+.search_title {
+    color: rgb(44, 74, 119);
+    font: normal normal bold 14px/normal Arial, Helvetica, sans-serif;
+    height: 43px;
+    padding-right: 6px;
+    text-align: right;
+    width: 258px;
+    height: 43px;
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+.search {
+    background-color: rgb(254, 247, 217);
+    border: 1px solid rgb(230, 157, 1);
+    border-width: initial;
+    color: black;
+    font-family: tahoma;
+    font-size: 11px;
+    height: 14px;
+    border: 2px inset;
+    cursor: auto;
+    padding: 1px;
+    -webkit-appearance: textfield;
+    -webkit-rtl-ordering: logical;
+    -webkit-user-select: text;
+    display: inline-block;
+    font: -webkit-small-control;
+    letter-spacing: normal;
+    line-height: normal;
+    margin: 0em;
+    text-align: -webkit-auto;
+    text-indent: 0px;
+    text-shadow: none;
+    text-transform: none;
+    word-spacing: normal;
+}
+
+.error {
+    font: normal normal bold 24px/normal Arial, Helvetica, sans-serif; 
+    color: red;
+}
+
+#marqueecontainer {
+    position: relative;
+    width: 170px;  /* marquee width  */
+    height: 200px; /* marquee height */
+    background-color: white;
+    overflow: hidden;
+    padding: 2px;
+    padding-left: 4px;
+    border-bottom: 2px solid rgb(44, 74, 119); 
+    margin-top: 3px;
+}
+
+.prd_block {
+    position: relative;
+    float: left;
+    width: 185px;
+    height: 413px;
+    background-color: rgb(148, 187, 204);
+    border: 1px solid gray;
+    margin-left: 11px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.prd_block .catname {
+    background: url(../images/menu_bgx.gif) repeat-x;
+    display: block;
+    color: white;
+    font-size: 18px;
+    padding: 5px;
+    height: 25px;
+}
+
+.prd_block .prdname {
+    height: 40px;
+    font-size: 14px;
+    font-family: 'Futura-Medium', 'Futura', 'Trebuchet MS', sans-serif;
+    text-align: center;
+    margin: 25px auto 0;
+}
+
+.image {
+    background-color: rgb(227, 236, 241);
+    height: 130px;
+    padding-top: 10px;
+    vertical-align: middle;
+}
+
+.prd_block .descr {
+    color: white;
+    height: 120px;
+    padding: 10px;
+}
+
+.prd_block .price {
+    background-color: rgb(211, 221, 213);
+    font-size: 24px;
+    height: 33px;
+}
+
+.prd_block .euro {
+    font-size: 14px;
+}

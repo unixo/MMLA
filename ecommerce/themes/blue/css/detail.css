@@ -1,0 +1,49 @@
+.detail {
+    float: center;
+    margin-top: 70px;
+    margin-left: 10px;
+}
+.detail table {
+    border-collapse: collapse;
+    vertical-align: middle;
+}
+tr.prd_title {
+    height: 40px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.reviews_count {
+    color: rgb(129, 129, 129);
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+tr.detail_row {
+    vertical-align: middle;
+}
+.rating {
+    font-weight: bold; 
+    font-size: 14px;
+}
+.item_price {
+    font-size: 20px;
+    font-weight: bold;
+}
+.right_box {
+    border-color: #c0c0c0;
+    border-width: 0px 0px 0px 1px;
+    border-style: solid;
+    padding-left: 10px;
+}
+.shiptime {
+    font-size: 12px;
+    color: rgb(102, 102, 102);
+}
+
+#glassmsg {
+    font-size: 10px;
+}
+
+.similiar {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+}

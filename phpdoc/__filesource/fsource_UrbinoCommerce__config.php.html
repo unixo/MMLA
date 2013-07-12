@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>File Source for config.php</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+						<h1>Source for file config.php</h1>
+<p>Documentation is available at <a href="../UrbinoCommerce/_config.php.html">config.php</a></p>
+<div class="src-code">
+<div class="src-code"><ol><li><div class="src-line"><a name="a1"></a><span class="src-php">&lt;?php</span></div></li>
+<li><div class="src-line"><a name="a2"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a3"></a><span class="src-doc">&nbsp;*&nbsp;File&nbsp;di&nbsp;configurazione&nbsp;del&nbsp;sito.</span></div></li>
+<li><div class="src-line"><a name="a4"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a5"></a><span class="src-doc">&nbsp;*&nbsp;Il&nbsp;file&nbsp;'config.php'&nbsp;contiene&nbsp;diverse&nbsp;costanti&nbsp;che&nbsp;determinano&nbsp;il</span></div></li>
+<li><div class="src-line"><a name="a6"></a><span class="src-doc">&nbsp;*&nbsp;funzionamento&nbsp;dell'intero&nbsp;sito,&nbsp;tra&nbsp;cui&nbsp;le&nbsp;credenziali&nbsp;di&nbsp;connessione&nbsp;alla</span></div></li>
+<li><div class="src-line"><a name="a7"></a><span class="src-doc">&nbsp;*&nbsp;base&nbsp;dati.</span></div></li>
+<li><div class="src-line"><a name="a8"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a9"></a><span class="src-doc">&nbsp;*&nbsp;PHP&nbsp;Version&nbsp;5</span></div></li>
+<li><div class="src-line"><a name="a10"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a11"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@category</span><span class="src-doc">&nbsp;Common</span></div></li>
+<li><div class="src-line"><a name="a12"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@package</span><span class="src-doc">&nbsp;&nbsp;UrbinoCommerce</span></div></li>
+<li><div class="src-line"><a name="a13"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@filesource</span></div></li>
+<li><div class="src-line"><a name="a14"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@author</span><span class="src-doc">&nbsp;&nbsp;&nbsp;Ferruccio&nbsp;Vitale&nbsp;&lt;unixo@devzero.it&gt;</span></div></li>
+<li><div class="src-line"><a name="a15"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@license</span><span class="src-doc">&nbsp;&nbsp;http://www.opensource.org/licenses/bsd-license.php&nbsp;BSD&nbsp;License</span></div></li>
+<li><div class="src-line"><a name="a16"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@version</span><span class="src-doc">&nbsp;&nbsp;SVN:&nbsp;$Id:&nbsp;config.php&nbsp;32&nbsp;2009-09-08&nbsp;14:02:18Z&nbsp;unixo&nbsp;$</span></div></li>
+<li><div class="src-line"><a name="a17"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@link</span><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;http://commerce.devzero.it</span></div></li>
+<li><div class="src-line"><a name="a18"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a19"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a20"></a><span class="src-sym">@</span><a href="http://www.php.net/session_start">session_start</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a21"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a22"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a23"></a><span class="src-doc">&nbsp;*&nbsp;Disabilito&nbsp;la&nbsp;generazione&nbsp;degli&nbsp;errori&nbsp;sul&nbsp;browser:&nbsp;evito&nbsp;qualunque&nbsp;sorta</span></div></li>
+<li><div class="src-line"><a name="a24"></a><span class="src-doc">&nbsp;*&nbsp;di&nbsp;information&nbsp;leackage.</span></div></li>
+<li><div class="src-line"><a name="a25"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a26"></a><a href="http://www.php.net/error_reporting">error_reporting</a><span class="src-sym">(</span><span class="src-id">E_ALL</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a27"></a><a href="http://www.php.net/ini_set">ini_set</a><span class="src-sym">(</span><span class="src-str">'display_errors'</span><span class="src-sym">,&nbsp;</span><span class="src-id">false</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a28"></a><a href="http://www.php.net/ini_set">ini_set</a><span class="src-sym">(</span><span class="src-str">'html_errors'</span><span class="src-sym">,&nbsp;</span><span class="src-id">false</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a29"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a30"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a31"></a><span class="src-comm">//&nbsp;{{{&nbsp;constants</span></div></li>
+<li><div class="src-line"><a name="a32"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a33"></a><span class="src-doc">&nbsp;*&nbsp;Costante:&nbsp;errore&nbsp;nel&nbsp;carrello&nbsp;utente</span></div></li>
+<li><div class="src-line"><a name="a34"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;ERR_BASKET</span></div></li>
+<li><div class="src-line"><a name="a35"></a><span class="src-doc">&nbsp;*/&nbsp;&nbsp;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a36"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'ERR_BASKET'</span><span class="src-sym">,&nbsp;</span><span class="src-num">10</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a37"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a38"></a><span class="src-doc">&nbsp;*&nbsp;Costante:&nbsp;errore&nbsp;nei&nbsp;parametri&nbsp;passati</span></div></li>
+<li><div class="src-line"><a name="a39"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;ERR_PARAM</span></div></li>
+<li><div class="src-line"><a name="a40"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a41"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'ERR_PARAM'</span><span class="src-sym">,&nbsp;</span><span class="src-num">20</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a42"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a43"></a><span class="src-doc">&nbsp;*&nbsp;Costante:&nbsp;errore&nbsp;durante&nbsp;la&nbsp;comunicazione&nbsp;con&nbsp;il&nbsp;database</span></div></li>
+<li><div class="src-line"><a name="a44"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;ERR_DATABASE</span></div></li>
+<li><div class="src-line"><a name="a45"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a46"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'ERR_DATABASE'</span><span class="src-sym">,&nbsp;</span><span class="src-num">30</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a47"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a48"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Feed&nbsp;RSS&nbsp;dei&nbsp;prodotti</span></div></li>
+<li><div class="src-line"><a name="a49"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_RSS</span></div></li>
+<li><div class="src-line"><a name="a50"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a51"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_RSS'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'rss'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a52"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a53"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Nome&nbsp;del&nbsp;tema&nbsp;corrente</span></div></li>
+<li><div class="src-line"><a name="a54"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_THEME</span></div></li>
+<li><div class="src-line"><a name="a55"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a56"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_THEME'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'theme'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a57"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a58"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Localizzazione&nbsp;attiva</span></div></li>
+<li><div class="src-line"><a name="a59"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_LANG</span></div></li>
+<li><div class="src-line"><a name="a60"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a61"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_LANG'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'lang'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a62"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a63"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Server&nbsp;SMTP</span></div></li>
+<li><div class="src-line"><a name="a64"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a65"></a><span class="src-doc">&nbsp;*&nbsp;FQDN&nbsp;o&nbsp;indirizzo&nbsp;IP&nbsp;del&nbsp;server&nbsp;SMTP&nbsp;per&nbsp;l'invio&nbsp;di&nbsp;mail</span></div></li>
+<li><div class="src-line"><a name="a66"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_SMTP_SERVER</span></div></li>
+<li><div class="src-line"><a name="a67"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a68"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_SMTP_SERVER'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'smtp_host'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a69"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a70"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Porta&nbsp;TCP&nbsp;del&nbsp;server&nbsp;SMTP</span></div></li>
+<li><div class="src-line"><a name="a71"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a72"></a><span class="src-doc">&nbsp;*&nbsp;Porta&nbsp;del&nbsp;server&nbsp;SMTP&nbsp;per&nbsp;l'invio&nbsp;di&nbsp;mail&nbsp;(il&nbsp;default&nbsp;e'&nbsp;25)</span></div></li>
+<li><div class="src-line"><a name="a73"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_SMTP_PORT</span></div></li>
+<li><div class="src-line"><a name="a74"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a75"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_SMTP_PORT'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'smtp_port'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a76"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a77"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Username&nbsp;per&nbsp;SMTP&nbsp;autenticato</span></div></li>
+<li><div class="src-line"><a name="a78"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_SMTP_USER</span></div></li>
+<li><div class="src-line"><a name="a79"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a80"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_SMTP_USER'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'smtp_user'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a81"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a82"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Password&nbsp;per&nbsp;SMTP&nbsp;autenticato</span></div></li>
+<li><div class="src-line"><a name="a83"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_SMTP_PASS</span></div></li>
+<li><div class="src-line"><a name="a84"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a85"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_SMTP_PASS'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'smtp_pass'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a86"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a87"></a><span class="src-doc">&nbsp;*&nbsp;Configurazione:&nbsp;Stringa&nbsp;di&nbsp;HELO&nbsp;per&nbsp;server&nbsp;SMTP</span></div></li>
+<li><div class="src-line"><a name="a88"></a><span class="src-doc">&nbsp;*</span></div></li>
+<li><div class="src-line"><a name="a89"></a><span class="src-doc">&nbsp;*&nbsp;Questa&nbsp;stringa&nbsp;viene&nbsp;inviata&nbsp;quando&nbsp;un'istanza&nbsp;della&nbsp;classe&nbsp;Mail&nbsp;apre&nbsp;una</span></div></li>
+<li><div class="src-line"><a name="a90"></a><span class="src-doc">&nbsp;*&nbsp;connessione&nbsp;verso&nbsp;il&nbsp;server&nbsp;SMTP.</span></div></li>
+<li><div class="src-line"><a name="a91"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONFIG_SMTP_HELO</span></div></li>
+<li><div class="src-line"><a name="a92"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a93"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONFIG_SMTP_HELO'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'smtp_helo'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a94"></a><span class="src-comm">//&nbsp;}}}</span></div></li>
+<li><div class="src-line"><a name="a95"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a96"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a97"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a98"></a><span class="src-doc">&nbsp;*&nbsp;URL&nbsp;per&nbsp;la&nbsp;connessione&nbsp;alla&nbsp;base&nbsp;dati.</span></div></li>
+<li><div class="src-line"><a name="a99"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@global&nbsp;</span><span class="src-doc-type">string&nbsp;</span><span class="src-doc-var">$dbURL&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a100"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;$dbURL</span></div></li>
+<li><div class="src-line"><a name="a101"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a102"></a><span class="src-var">$dbURL&nbsp;</span>=&nbsp;<span class="src-str">'mysql://dbusername:dbpassword@dbserver/dbname'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a103"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a104"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a105"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a106"></a><span class="src-doc">&nbsp;*&nbsp;NON&nbsp;MODIFICARE&nbsp;IL&nbsp;CODICE&nbsp;SOTTOSTANTE</span></div></li>
+<li><div class="src-line"><a name="a107"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a108"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a109"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a110"></a><span class="src-doc">&nbsp;*&nbsp;Istanzio&nbsp;un&nbsp;oggetto&nbsp;MDB2&nbsp;per&nbsp;la&nbsp;connessione&nbsp;al&nbsp;database:&nbsp;uso&nbsp;connessioni</span></div></li>
+<li><div class="src-line"><a name="a111"></a><span class="src-doc">&nbsp;*&nbsp;persistenti&nbsp;al&nbsp;database&nbsp;per&nbsp;migliorare&nbsp;le&nbsp;prestazioni;&nbsp;attivo&nbsp;inoltre</span></div></li>
+<li><div class="src-line"><a name="a112"></a><span class="src-doc">&nbsp;*&nbsp;l'opzione&nbsp;di&nbsp;racchiudere&nbsp;tra&nbsp;virgolette&nbsp;gli&nbsp;identificatori&nbsp;per&nbsp;evitare</span></div></li>
+<li><div class="src-line"><a name="a113"></a><span class="src-doc">&nbsp;*&nbsp;possibili&nbsp;SQL&nbsp;Injection.</span></div></li>
+<li><div class="src-line"><a name="a114"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a115"></a><span class="src-var">$mdb2_options&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span><span class="src-str">'persistent'&nbsp;</span>=&gt;&nbsp;<span class="src-id">true</span><span class="src-sym">,&nbsp;</span><span class="src-str">'quote_identifier'&nbsp;</span>=&gt;&nbsp;<span class="src-id">true</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a116"></a><span class="src-var">$db_conn&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=<span class="src-sym">&amp;&nbsp;</span><span class="src-id">MDB2</span><span class="src-sym">::</span><span class="src-id">factory</span><span class="src-sym">(</span><span class="src-var">$dbURL</span><span class="src-sym">,&nbsp;</span><span class="src-var">$mdb2_options</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a117"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-id">PEAR</span><span class="src-sym">::</span><span class="src-id">isError</span><span class="src-sym">(</span><span class="src-var">$db_conn</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a118"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">die</span><span class="src-sym">(</span><span class="src-str">'Error&nbsp;while&nbsp;connecting&nbsp;:&nbsp;'&nbsp;</span>.&nbsp;<span class="src-var">$db_conn</span><span class="src-sym">-&gt;</span><span class="src-id">getMessage</span><span class="src-sym">(</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a119"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a120"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a121"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a122"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a123"></a><span class="src-doc">&nbsp;*&nbsp;Creo&nbsp;un'istanza&nbsp;dell'oggetto&nbsp;Log&nbsp;per&nbsp;registrare&nbsp;nel&nbsp;database&nbsp;gli&nbsp;eventi</span></div></li>
+<li><div class="src-line"><a name="a124"></a><span class="src-doc">&nbsp;*&nbsp;generati&nbsp;dagli&nbsp;utenti&nbsp;autenticati.&nbsp;Passo&nbsp;al&nbsp;costruttore&nbsp;un&nbsp;vettore&nbsp;di</span></div></li>
+<li><div class="src-line"><a name="a125"></a><span class="src-doc">&nbsp;*&nbsp;configurazione,&nbsp;con&nbsp;il&nbsp;riferimento&nbsp;al&nbsp;DSN&nbsp;del&nbsp;database.</span></div></li>
+<li><div class="src-line"><a name="a126"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a127"></a><span class="src-var">$conf</span><span class="src-sym">[</span><span class="src-str">'dsn'</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-var">$dbURL</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a128"></a><span class="src-var">$logger&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&nbsp;<span class="src-sym">&amp;</span><span class="src-id">Log</span><span class="src-sym">::</span><span class="src-id">singleton</span><span class="src-sym">(</span><span class="src-str">'sql'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'log_table'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'ident'</span><span class="src-sym">,&nbsp;</span><span class="src-var">$conf</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a129"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a130"></a><span class="src-comm">//&nbsp;{{{&nbsp;constants</span></div></li>
+<li><div class="src-line"><a name="a131"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a132"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a133"></a><span class="src-doc">&nbsp;*&nbsp;Percorso&nbsp;fisico&nbsp;del&nbsp;filesystem&nbsp;in&nbsp;cui&nbsp;e'&nbsp;installato&nbsp;il&nbsp;sito</span></div></li>
+<li><div class="src-line"><a name="a134"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a135"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span><a href="http://www.php.net/defined">defined</a><span class="src-sym">(</span><span class="src-str">'ABSPATH'</span><span class="src-sym">)&nbsp;)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a136"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'ABSPATH'</span><span class="src-sym">,&nbsp;</span><span class="src-id">dirname</span><span class="src-sym">(</span>__FILE__<span class="src-sym">)&nbsp;</span>.&nbsp;<span class="src-str">'/'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a137"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a138"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a139"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><a href="http://www.php.net/dirname">dirname</a><span class="src-sym">(</span><span class="src-var">$_SERVER</span><span class="src-sym">[</span><span class="src-str">'SCRIPT_NAME'</span><span class="src-sym">]</span><span class="src-sym">)&nbsp;</span>==&nbsp;<span class="src-str">'/'</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a140"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a141"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;URL&nbsp;del&nbsp;sito</span></div></li>
+<li><div class="src-line"><a name="a142"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;CONTENT_URL</span></div></li>
+<li><div class="src-line"><a name="a143"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a144"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONTENT_URL'</span><span class="src-sym">,&nbsp;</span><span class="src-str">''</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a145"></a><span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a146"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a147"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;</span><span class="src-doc-coretag">@ignore</span></div></li>
+<li><div class="src-line"><a name="a148"></a><span class="src-doc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a149"></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'CONTENT_URL'</span><span class="src-sym">,&nbsp;</span><span class="src-id">dirname</span><span class="src-sym">(</span><span class="src-var">$_SERVER</span><span class="src-sym">[</span><span class="src-str">'SCRIPT_NAME'</span><span class="src-sym">]</span><span class="src-sym">))</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a150"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a151"></a>&nbsp;&nbsp;&nbsp;</div></li>
+<li><div class="src-line"><a name="a152"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a153"></a><span class="src-doc">&nbsp;*&nbsp;Leggo&nbsp;dal&nbsp;database&nbsp;il&nbsp;nome&nbsp;del&nbsp;tema&nbsp;attualmente&nbsp;in&nbsp;uso&nbsp;e&nbsp;definisco&nbsp;delle</span></div></li>
+<li><div class="src-line"><a name="a154"></a><span class="src-doc">&nbsp;*&nbsp;costanti&nbsp;che&nbsp;puntano&nbsp;al&nbsp;percorso&nbsp;fisico&nbsp;del&nbsp;tema,&nbsp;nonché&nbsp;la&nbsp;directory</span></div></li>
+<li><div class="src-line"><a name="a155"></a><span class="src-doc">&nbsp;*&nbsp;contenente&nbsp;le&nbsp;immagini&nbsp;del&nbsp;tema&nbsp;selezionato.</span></div></li>
+<li><div class="src-line"><a name="a156"></a><span class="src-doc">&nbsp;*/&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a157"></a><span class="src-var">$result&nbsp;</span>=&nbsp;<a href="../UrbinoCommerce/_includes---common.php.html#functionexecuteQuery">executeQuery</a><span class="src-sym">(</span><span class="src-str">&quot;SELECT&nbsp;value&nbsp;FROM&nbsp;config&nbsp;WHERE&nbsp;attrib='theme'&quot;</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a158"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a159"></a><span class="src-doc">&nbsp;*&nbsp;Nome&nbsp;del&nbsp;tema&nbsp;corrente</span></div></li>
+<li><div class="src-line"><a name="a160"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;THEME</span></div></li>
+<li><div class="src-line"><a name="a161"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a162"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'THEME'</span><span class="src-sym">,&nbsp;</span><span class="src-var">$result</span><span class="src-sym">[</span><span class="src-num">0</span><span class="src-sym">]</span><span class="src-sym">[</span><span class="src-str">'value'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a163"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a164"></a><span class="src-doc">&nbsp;*&nbsp;Percorso&nbsp;fisico&nbsp;dove&nbsp;sono&nbsp;presenti&nbsp;i&nbsp;temi</span></div></li>
+<li><div class="src-line"><a name="a165"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;THEMES_PATH</span></div></li>
+<li><div class="src-line"><a name="a166"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a167"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'THEMES_PATH'</span><span class="src-sym">,&nbsp;</span><span class="src-id">ABSPATH&nbsp;</span>.&nbsp;<span class="src-str">'themes/'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a168"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a169"></a><span class="src-doc">&nbsp;*&nbsp;Percorso&nbsp;fisico&nbsp;del&nbsp;tema&nbsp;corrente</span></div></li>
+<li><div class="src-line"><a name="a170"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;THEME_PATH</span></div></li>
+<li><div class="src-line"><a name="a171"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a172"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'THEME_PATH'</span><span class="src-sym">,&nbsp;</span><span class="src-id">THEMES_PATH&nbsp;</span>.&nbsp;<span class="src-id">THEME&nbsp;</span>.&nbsp;<span class="src-str">'/'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a173"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a174"></a><span class="src-doc">&nbsp;*&nbsp;URL&nbsp;del&nbsp;tema&nbsp;corrente</span></div></li>
+<li><div class="src-line"><a name="a175"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;THEME_BASEURL</span></div></li>
+<li><div class="src-line"><a name="a176"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a177"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'THEME_BASEURL'</span><span class="src-sym">,&nbsp;</span><span class="src-id">CONTENT_URL&nbsp;</span>.&nbsp;<span class="src-str">'/themes/'&nbsp;</span>.&nbsp;<span class="src-id">THEME</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a178"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a179"></a><span class="src-doc">&nbsp;*&nbsp;URL&nbsp;delle&nbsp;immagini&nbsp;del&nbsp;tema&nbsp;corrente</span></div></li>
+<li><div class="src-line"><a name="a180"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;THEME_IMAGES</span></div></li>
+<li><div class="src-line"><a name="a181"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a182"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'THEME_IMAGES'</span><span class="src-sym">,&nbsp;</span><span class="src-id">CONTENT_URL&nbsp;</span>.&nbsp;<span class="src-str">'/themes/'&nbsp;</span>.&nbsp;<span class="src-id">THEME&nbsp;</span>.&nbsp;<span class="src-str">'/images/'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a183"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a184"></a><span class="src-doc">&nbsp;*&nbsp;URL&nbsp;dei&nbsp;file&nbsp;di&nbsp;stile&nbsp;CSS&nbsp;del&nbsp;tema&nbsp;corrente</span></div></li>
+<li><div class="src-line"><a name="a185"></a><span class="src-doc">&nbsp;*&nbsp;</span><span class="src-doc-coretag">@name</span><span class="src-doc">&nbsp;THEME_CSS</span></div></li>
+<li><div class="src-line"><a name="a186"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a187"></a><a href="http://www.php.net/define">define</a><span class="src-sym">(</span><span class="src-str">'THEME_CSS'</span><span class="src-sym">,&nbsp;</span><span class="src-id">CONTENT_URL&nbsp;</span>.&nbsp;<span class="src-str">'/themes/'&nbsp;</span>.&nbsp;<span class="src-id">THEME&nbsp;</span>.&nbsp;<span class="src-str">'/css/'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a188"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a189"></a><span class="src-comm">//&nbsp;}}}</span></div></li>
+<li><div class="src-line"><a name="a190"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a191"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a192"></a><span class="src-doc">&nbsp;*&nbsp;Descrivo&nbsp;i&nbsp;parametri&nbsp;per&nbsp;inizializzare&nbsp;il&nbsp;motore&nbsp;di&nbsp;traduzione</span></div></li>
+<li><div class="src-line"><a name="a193"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a194"></a><span class="src-var">$params&nbsp;</span>=&nbsp;<span class="src-key">array</span><span class="src-sym">(</span></div></li>
+<li><div class="src-line"><a name="a195"></a>&nbsp;&nbsp;<span class="src-str">'langs_avail_table'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'langs'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a196"></a>&nbsp;&nbsp;<span class="src-str">'lang_id_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'id'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a197"></a>&nbsp;&nbsp;<span class="src-str">'lang_name_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'name'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a198"></a>&nbsp;&nbsp;<span class="src-str">'lang_meta_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'meta'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a199"></a>&nbsp;&nbsp;<span class="src-str">'lang_errmsg_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'error_text'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a200"></a>&nbsp;&nbsp;<span class="src-str">'lang_encoding_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'encoding'</span><span class="src-sym">,&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a201"></a>&nbsp;&nbsp;<span class="src-str">'strings_default_table'&nbsp;</span>=&gt;&nbsp;<span class="src-str">'strings'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a202"></a>&nbsp;&nbsp;<span class="src-str">'string_id_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'string_id'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a203"></a>&nbsp;&nbsp;<span class="src-str">'string_page_id_col'&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'page_id'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a204"></a>&nbsp;&nbsp;<span class="src-str">'string_text_col'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>=&gt;&nbsp;<span class="src-str">'%s'</span><span class="src-sym">,</span></div></li>
+<li><div class="src-line"><a name="a205"></a><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a206"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a207"></a><span class="src-doc">/**</span></div></li>
+<li><div class="src-line"><a name="a208"></a><span class="src-doc">&nbsp;*&nbsp;Inizializzo&nbsp;il&nbsp;motore&nbsp;di&nbsp;traduzione:&nbsp;imposto&nbsp;la&nbsp;lingua&nbsp;di&nbsp;base&nbsp;e&nbsp;verifico</span></div></li>
+<li><div class="src-line"><a name="a209"></a><span class="src-doc">&nbsp;*&nbsp;se&nbsp;la&nbsp;sessione&nbsp;corrente&nbsp;ha&nbsp;gia'&nbsp;una&nbsp;preferenza&nbsp;di&nbsp;lingua.</span></div></li>
+<li><div class="src-line"><a name="a210"></a><span class="src-doc">&nbsp;*/</span></div></li>
+<li><div class="src-line"><a name="a211"></a><span class="src-var">$tr&nbsp;</span>=<span class="src-sym">&amp;&nbsp;</span><span class="src-id">Translation2</span><span class="src-sym">::</span><span class="src-id">factory</span><span class="src-sym">(</span><span class="src-str">'MDB2'</span><span class="src-sym">,&nbsp;</span><span class="src-var">$dbURL</span><span class="src-sym">,&nbsp;</span><span class="src-var">$params</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a212"></a><span class="src-var">$tr</span><span class="src-sym">-&gt;</span><span class="src-id">setCharset</span><span class="src-sym">(</span><span class="src-str">'utf8'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a213"></a><span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-sym">!</span>isset<span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'lang'</span><span class="src-sym">]</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a214"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$tr</span><span class="src-sym">-&gt;</span><span class="src-id">setLang</span><span class="src-sym">(</span><span class="src-str">'en'</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a215"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'lang'</span><span class="src-sym">]&nbsp;</span>=&nbsp;<span class="src-str">'en'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line"><a name="a216"></a><span class="src-sym">}&nbsp;</span><span class="src-key">else&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line"><a name="a217"></a>&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$tr</span><span class="src-sym">-&gt;</span><span class="src-id">setLang</span><span class="src-sym">(</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'lang'</span><span class="src-sym">]</span><span class="src-sym">)</span><span class="src-sym">;&nbsp;&nbsp;</span></div></li>
+<li><div class="src-line"><a name="a218"></a><span class="src-sym">}</span></div></li>
+<li><div class="src-line"><a name="a219"></a>&nbsp;</div></li>
+<li><div class="src-line"><a name="a220"></a><span class="src-php">?&gt;</span></div></li>
+</ol></div>
+</div>
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 09 Sep 2009 14:48:14 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</body>
+</html>

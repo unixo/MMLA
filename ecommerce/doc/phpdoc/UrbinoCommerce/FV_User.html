@@ -1,0 +1,1160 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  <html xmlns="http://www.w3.org/1999/xhtml">
+		<head>
+			<!-- template designed by Marco Von Ballmoos -->
+			<title>Docs For Class FV_User</title>
+			<link rel="stylesheet" href="../media/stylesheet.css" />
+			<meta http-equiv='Content-Type' content='text/html; charset=iso-8859-1'/>
+		</head>
+		<body>
+			<div class="page-body">			
+<h2 class="class-name"><img src="../media/images/Class_logo.png"
+														alt=" Class"
+														title=" Class"
+														style="vertical-align: middle"> FV_User</h2>
+
+<a name="sec-description"></a>
+<div class="info-box">
+	<div class="info-box-title">Description</div>
+	<div class="nav-bar">
+					<span class="disabled">Description</span> |
+													<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+						|											<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+						
+											<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+						
+			</div>
+	<div class="info-box-body">
+        		<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Classe FV_User</p>
+<p class="description"><p>L'oggetto FV_User rappresenta un utente contenuto nella base dati.</p><p>Esempio d'utilizzo della classe  <div class="src-code"><ol><li><div class="src-line">&nbsp;<span class="src-inc">require_once&nbsp;</span><span class="src-str">'User.php'</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;</div></li>
+<li><div class="src-line">&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-id"><a href="../UrbinoCommerce/FV_User.html">FV_User</a></span><span class="src-sym">::</span><a href="../UrbinoCommerce/FV_User.html#methodvalidateUser">validateUser</a><span class="src-sym">(</span><span class="src-str">'username'</span><span class="src-sym">,&nbsp;</span><span class="src-str">'password'</span><span class="src-sym">))&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$user&nbsp;</span>=<span class="src-sym">&amp;&nbsp;</span><span class="src-var">$_SESSION</span><span class="src-sym">[</span><span class="src-str">'user'</span><span class="src-sym">]</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-key">if&nbsp;</span><span class="src-sym">(</span><span class="src-var">$user</span><span class="src-sym">-&gt;</span><a href="../UrbinoCommerce/FV_User.html#methodisAdmin">isAdmin</a><span class="src-sym">(</span><span class="src-sym">)&nbsp;</span>===&nbsp;<span class="src-id">true</span><span class="src-sym">)&nbsp;</span><span class="src-sym">{</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;echo&nbsp;<span class="src-str">&quot;Logged&nbsp;user&nbsp;is&nbsp;an&nbsp;administrator\n&quot;</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-sym">}</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$user</span><span class="src-sym">-&gt;</span><span class="src-id"><a href="../UrbinoCommerce/FV_User.html#var$basket">basket</a></span><span class="src-sym">-&gt;</span><span class="src-id">add</span><span class="src-sym">(</span><span class="src-num">12</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="src-var">$user</span><span class="src-sym">-&gt;</span><a href="../UrbinoCommerce/FV_User.html#methodlogout">logout</a><span class="src-sym">(</span><span class="src-sym">)</span><span class="src-sym">;</span></div></li>
+<li><div class="src-line">&nbsp;<span class="src-sym">}</span></div></li>
+</ol></div></p></p>
+	<ul class="tags">
+				<li><span class="field">author:</span> Ferruccio Vitale &lt;<a href="mailto:unixo@devzero.it">unixo@devzero.it</a>&gt;</li>
+				<li><span class="field">link:</span> <a href="http://commerce.devzero.it">http://commerce.devzero.it</a></li>
+				<li><span class="field">uses:</span> <a href="../UrbinoCommerce/_includes---common.php.html#functiongetSMTPSettings">getSMTPSettings()</a> - Per ottenere le impostazione del server SMTP per
+           inviare mail all'utente</li>
+				<li><span class="field">uses:</span> <a href="../UrbinoCommerce/FV_Basket.html">FV_Basket</a> - Rappresentazione del carrello utente</li>
+				<li><span class="field">uses:</span> <a href="../UrbinoCommerce/_includes---common.php.html#functionexecuteQuery">executeQuery()</a> - API per interfacciarsi con il database</li>
+				<li><span class="field">license:</span> <a href="http://www.opensource.org/licenses/bsd-license.php">BSD License</a></li>
+			</ul>
+		<p class="notes">
+			Located in <a class="field" href="_includes---User.php.html">/includes/User.php</a> (line <span class="field"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a46">46</a></span>)
+		</p>
+		
+				
+		<pre></pre>
+	
+			</div>
+</div>
+
+
+	<a name="sec-const-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constant Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Constants</span> (<a href="#sec-consts">details</a>)
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="const-summary">
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#DUMMY_LOGIN" title="details" class="const-name">DUMMY_LOGIN</a> = 					<span class="var-type"> &quot;johndoe&quot;</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PASSWD_INVALIDCHAR" title="details" class="const-name">PASSWD_INVALIDCHAR</a> = 					<span class="var-type"> -1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PASSWD_NOTVARIETY" title="details" class="const-name">PASSWD_NOTVARIETY</a> = 					<span class="var-type"> -2</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PASSWD_OK" title="details" class="const-name">PASSWD_OK</a> = 					<span class="var-type">  1</span>
+
+				</div>
+								<div class="const-title">
+					<img src="../media/images/Constant.png" alt=" " />
+					<a href="#PASSWD_TOOSHORT" title="details" class="const-name">PASSWD_TOOSHORT</a> = 					<span class="var-type"> -3</span>
+
+				</div>
+							</div>
+		</div>
+	</div>
+
+	<a name="sec-var-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variable Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+						<span class="disabled">Vars</span> (<a href="#sec-vars">details</a>)
+							| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<div class="var-summary">
+																																																																																																																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$address" title="details" class="var-name">$address</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$basket" title="details" class="var-name">$basket</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$cap" title="details" class="var-name">$cap</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$city" title="details" class="var-name">$city</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$email" title="details" class="var-name">$email</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$firstName" title="details" class="var-name">$firstName</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$lastName" title="details" class="var-name">$lastName</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$login" title="details" class="var-name">$login</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$pass" title="details" class="var-name">$pass</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$state" title="details" class="var-name">$state</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$uid" title="details" class="var-name">$uid</a>
+				</div>
+																<div class="var-title">
+					<img src="../media/images/Variable.png" alt=" " />
+					<span class="var-type">mixed</span>
+					<a href="#$valid" title="details" class="var-name">$valid</a>
+				</div>
+											</div>
+		</div>
+	</div>
+
+	<a name="sec-method-summary"></a>
+	<div class="info-box">
+		<div class="info-box-title">Method Summary</span></div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+				 
+				|
+						<span class="disabled">Methods</span> (<a href="#sec-methods">details</a>)
+		</div>
+		<div class="info-box-body">			
+			<div class="method-summary">
+												<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">boolean</span>
+										<a href="#checkEmail" title="details" class="method-name">checkEmail</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$email</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#dummyUser" title="details" class="method-name">&amp;dummyUser</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#enableUser" title="details" class="method-name">enableUser</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">bollean</span>&nbsp;<span class="var-name">$enable</span> = <span class="var-default">true</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#factoryFromArray" title="details" class="method-name">&amp;factoryFromArray</a>
+											(<span class="var-type">array</span>&nbsp;<span class="var-name">$vector</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$basket</span> = <span class="var-default">null</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#forgotPassword" title="details" class="method-name">forgotPassword</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$param</span>)
+									</div>
+																																																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">void</span>
+										<a href="#sendVerificationEmail" title="details" class="method-name">sendVerificationEmail</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$param</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">boolean</span>
+										<a href="#validateLogin" title="details" class="method-name">validateLogin</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>)
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">boolean</span>
+										<a href="#validatePasswordStrongness" title="details" class="method-name">validatePasswordStrongness</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$pwd</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$minLen</span> = <span class="var-default">8</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$minStr</span> = <span class="var-default">3</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$specials</span> = <span class="var-default">'_-.!#$%&amp;@'</span>])
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/StaticMethod.png" alt=" "/>
+											static <span class="method-result">boolean</span>
+										<a href="#validateUser" title="details" class="method-name">validateUser</a>
+											(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pass</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$basket</span> = <span class="var-default">null</span>])
+									</div>
+																																																																												<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#isAdmin" title="details" class="method-name">isAdmin</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">boolean</span>
+										<a href="#isDummy" title="details" class="method-name">isDummy</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#logout" title="details" class="method-name">logout</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#reloadData" title="details" class="method-name">reloadData</a>
+										()
+									</div>
+																																																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">void</span>
+										<a href="#__clone" title="details" class="method-name">__clone</a>
+										()
+									</div>
+																<div class="method-definition">
+					<img src="../media/images/Method.png" alt=" "/>
+											<span class="method-result">string</span>
+										<a href="#__toString" title="details" class="method-name">__toString</a>
+										()
+									</div>
+											</div>
+		</div>
+	</div>		
+
+	<a name="sec-vars"></a>
+	<div class="info-box">
+		<div class="info-box-title">Variables</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Vars</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-const-summary">Constants</a> (<a href="#sec-consts">details</a>)
+							
+										| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			
+<a name="var$address" id="$address"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$address</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a77">77</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$basket" id="$basket"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$basket</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a88">88</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Istanza della classe FV_Basket: rappresenta il carrello dell'utente</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../UrbinoCommerce/FV_Basket.html">FV_Basket</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$cap" id="$cap"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$cap</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a77">77</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$city" id="$city"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$city</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a77">77</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$email" id="$email"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$email</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a64">64</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Indirizzo email</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$firstName" id="$firstName"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$firstName</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a56">56</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Nome dell'utente</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$lastName" id="$lastName"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$lastName</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a60">60</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Cognome dell'utente</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$login" id="$login"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$login</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a70">70</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Nome utente (prima parte delle credenziali d'accesso)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../UrbinoCommerce/FV_User.html#var$pass">FV_User::$pass</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$pass" id="$pass"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$pass</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a76">76</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Password (seconda parte delle credenziali d'accesso)</p>
+	<ul class="tags">
+				<li><span class="field">see:</span> <a href="../UrbinoCommerce/FV_User.html#var$login">FV_User::$login</a></li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$state" id="$state"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$state</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a77">77</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$uid" id="$uid"><!-- --></A>
+<div class="oddrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$uid</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a93">93</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Identificativo utente (uid): tale valore e' univoco all'interno della  tabella 'users.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+<a name="var$valid" id="$valid"><!-- --></A>
+<div class="evenrow">
+
+	<div class="var-header">
+		<img src="../media/images/Variable.png" />
+		<span class="var-title">
+			<span class="var-type">mixed</span>
+			<span class="var-name">$valid</span>
+						(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a82">82</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Abilitazione all'accesso: se vale uno, l'account e' stato attivato e  l'utente puo' regolarmente accedere al sito.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	
+		
+		
+
+</div>
+						
+		</div>
+	</div>
+	
+	<a name="sec-methods"></a>
+	<div class="info-box">
+		<div class="info-box-title">Methods</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+															<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														<a href="#sec-method-summary">Methods</a> (<span class="disabled">details</span>)
+						
+		</div>
+		<div class="info-box-body">
+			<A NAME='method_detail'></A>
+<a name="methodcheckEmail" id="checkEmail"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static checkEmail</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a349">349</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validazione email</p>
+<p class="description"><p>La funzione si occupa di verificare che la email specificata sia  sintatticamente corretta: questo prevede di verificare la presenza del  carattere '@', nonche' il formato del dominio e dell'utente.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Restituisce true se la login e' gia' in uso</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			checkEmail
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$email</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$email</span><span class="var-description">: Email da verificare</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methoddummyUser" id="dummyUser"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static dummyUser</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a249">249</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Funzione factory</p>
+<p class="description"><p>Crea un'istanza della classe per rappresentare un visitatore occasionale  ovvero un utente che non si ancora autenticato.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			&amp;dummyUser
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodenableUser" id="enableUser"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static enableUser</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a410">410</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Abilitazione utente</p>
+<p class="description"><p>La funzione si occupa di abilitare o disabilitare la funzione di  login per l'utente corrispondente al parametro $uid: di fatto, pur  inserendo delle credenziali valide in fase di login, solo un utente che  ha il campo 'valid' pari ad uno puo' proseguire.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> PEAR_Exception Viene generata qualora il parametro non sia valido</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			enableUser
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$id</span>, [<span class="var-type">bollean</span>&nbsp;<span class="var-name">$enable</span> = <span class="var-default">true</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$id</span><span class="var-description">: Identificativo utente da abilitare/disabilitare</span>			</li>
+					<li>
+				<span class="var-type">bollean</span>
+				<span class="var-name">$enable</span><span class="var-description">: Se vale true, l'utente viene abilitato.</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodfactoryFromArray" id="factoryFromArray"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static factoryFromArray</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a210">210</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Funzione factory</p>
+<p class="description"><p>Crea un'istanza della classe e ne valorizza il contenuto con i valori  del vettore passato come parametro (per esempio: una record del DB).</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			&amp;factoryFromArray
+		</span>
+					(<span class="var-type">array</span>&nbsp;<span class="var-name">$vector</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$basket</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">array</span>
+				<span class="var-name">$vector</span><span class="var-description">: Vettore con i valori</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$basket</span><span class="var-description">: Istanza della classe FV_Basket</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodforgotPassword" id="forgotPassword"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static forgotPassword</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a531">531</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Invio nuove credenziali</p>
+<p class="description"><p>Se l'utente dimentica/perde la propria password d'accesso puo' sempre  chiedere al sistema di inviare via mail una nuova password generata  in modo pseudo-casuale.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> PEAR_Exception Viene generata qualora l'UID non sia valido</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			forgotPassword
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$param</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$param</span><span class="var-description">: Login dell'utente</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodsendVerificationEmail" id="sendVerificationEmail"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static sendVerificationEmail</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a484">484</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Invia la mail per attivazione account</p>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			sendVerificationEmail
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$param</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$param</span><span class="var-description">: Login cui mandare la mail</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidateLogin" id="validateLogin"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static validateLogin</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a137">137</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Controllo login</p>
+<p class="description"><p>La funzione si occupa di verificare se il login specificato come argomento  e' stato gia' utilizzato da qualche altro utente: tale valore, infatti,  deve essere univoco all'interno della tabella 'users'.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Restituisce true se la login e' gia' in uso</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			validateLogin
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>)
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span><span class="var-description">: Login da verificare</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidatePasswordStrongness" id="validatePasswordStrongness"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static validatePasswordStrongness</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a167">167</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Controllo robustezza password</p>
+<p class="description"><p>La funzione si occupa di verificare se la password specificata risulta  abbastanza robusta; vengono effettuati diversi controlli, tra cui: <ul><li>lunghezza minima della password (default 8 caratteri)</li><li>presenza caratteri speciali (default sono ammessi '_-.!#$%&amp;@')</li><li>varieta' dei caratteri usati (devono essere presenti numeri, lettere e
+   caratteri speciali)</li></ul></p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Restituisce true se la login e' gia' in uso</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			validatePasswordStrongness
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$pwd</span>, [<span class="var-type">integer</span>&nbsp;<span class="var-name">$minLen</span> = <span class="var-default">8</span>], [<span class="var-type">integer</span>&nbsp;<span class="var-name">$minStr</span> = <span class="var-default">3</span>], [<span class="var-type">string</span>&nbsp;<span class="var-name">$specials</span> = <span class="var-default">'_-.!#$%&amp;@'</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$pwd</span><span class="var-description">: Password da verificare</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$minLen</span><span class="var-description">: Lunghezza minima ammessa</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$minStr</span><span class="var-description">: Varieta' minima di caratteri</span>			</li>
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$specials</span><span class="var-description">: Set di caratteri speciali ammessi</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodvalidateUser" id="validateUser"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/StaticMethod.png" />
+		<span class="method-title">static validateUser</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a323">323</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Validazione credenziali</p>
+<p class="description"><p>La funzione si occupa di verificare se le credenziali specificate  corrispondono ad un utente registrato ed abilitato al login: il campo  'valid' della tabella indica, se vale 1, che l'utente puo' collegarsi.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Restituisce true se la login e' gia' in uso</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			validateUser
+		</span>
+					(<span class="var-type">string</span>&nbsp;<span class="var-name">$user</span>, <span class="var-type">integer</span>&nbsp;<span class="var-name">$pass</span>, [<span class="var-type">mixed</span>&nbsp;<span class="var-name">$basket</span> = <span class="var-default">null</span>])
+			</div>
+	
+			<ul class="parameters">
+					<li>
+				<span class="var-type">string</span>
+				<span class="var-name">$user</span><span class="var-description">: Password da verificare</span>			</li>
+					<li>
+				<span class="var-type">integer</span>
+				<span class="var-name">$pass</span><span class="var-description">: Lunghezza minima ammessa</span>			</li>
+					<li>
+				<span class="var-type">mixed</span>
+				<span class="var-name">$basket</span><span class="var-description">: Istanza della classe FV_Basket</span>			</li>
+				</ul>
+		
+			
+	</div>
+<a name="methodisAdmin" id="isAdmin"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">isAdmin</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a471">471</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Privilegio utente</p>
+<p class="description"><p>La funzione restituisce true se l'utente che effettua la richiesta e'  un amministratore.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Restituisce true se l'utente e' un amministratore.</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isAdmin
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodisDummy" id="isDummy"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">isDummy</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a303">303</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Getter della variabile membro &quot;dummy&quot;</p>
+<p class="description"><p>Restituisce &quot;true&quot; se l'istanza della classe rappresenta un'utente  &quot;dummy&quot;, o fittizio.</p></p>
+	<ul class="tags">
+				<li><span class="field">return:</span> True se l'utente e' fittizio</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">boolean</span>
+		<span class="method-name">
+			isDummy
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodlogout" id="logout"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">logout</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a573">573</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Logout utente</p>
+<p class="description"><p>Effettua la serializzazione del carrello e la scrive sul database, in  modo tale da ripristinarne il contenuto al successivo login.</p></p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			logout
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="methodreloadData" id="reloadData"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">reloadData</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a230">230</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Aggiornamento variabili membro</p>
+<p class="description"><p>La funzione rilegge dalla base dati il record dell'utente e aggiorna le  proprie variabili membro: questa procedura trova utilita' nel form per  l'aggiornamento del proprio profilo.</p></p>
+	<ul class="tags">
+				<li><span class="field">throws:</span> PEAR_Exception Viene generata qualora l'UID non sia valido</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			reloadData
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__clone" id="__clone"><!-- --></a>
+<div class="evenrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">__clone</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a107">107</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">La funzionalita' di clone di una classe non e' ammessa.</p>
+	<ul class="tags">
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">void</span>
+		<span class="method-name">
+			__clone
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+<a name="method__toString" id="__toString"><!-- --></a>
+<div class="oddrow">
+	
+	<div class="method-header">
+		<img src="../media/images/Method.png" />
+		<span class="method-title">__toString</span> (line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a118">118</a></span>)
+	</div> 
+	
+	<!-- ========== Info from phpDoc block ========= -->
+<p class="short-description">Rappresentazione della classe sotto forma di stringa.</p>
+	<ul class="tags">
+				<li><span class="field">return:</span> Descrizione dell'istanza</li>
+				<li><span class="field">access:</span> public</li>
+			</ul>
+	
+	<div class="method-signature">
+		<span class="method-result">string</span>
+		<span class="method-name">
+			__toString
+		</span>
+				()
+			</div>
+	
+		
+			
+	</div>
+						
+		</div>
+	</div>
+
+	<a name="sec-consts"></a>
+	<div class="info-box">
+		<div class="info-box-title">Class Constants</div>
+		<div class="nav-bar">
+			<a href="#sec-description">Description</a> |
+										<a href="#sec-var-summary">Constants</a> (<span class="disabled">details</span>)
+						
+			
+												<a href="#sec-var-summary">Vars</a> (<a href="#sec-vars">details</a>)
+														| 
+									<a href="#sec-method-summary">Methods</a> (<a href="#sec-methods">details</a>)
+							
+					</div>
+		<div class="info-box-body">
+			<a name="constDUMMY_LOGIN" id="DUMMY_LOGIN"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">DUMMY_LOGIN</span>
+			 = <span class="const-default"> &quot;johndoe&quot;</span>
+			(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a48">48</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPASSWD_INVALIDCHAR" id="PASSWD_INVALIDCHAR"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PASSWD_INVALIDCHAR</span>
+			 = <span class="const-default"> -1</span>
+			(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a50">50</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPASSWD_NOTVARIETY" id="PASSWD_NOTVARIETY"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PASSWD_NOTVARIETY</span>
+			 = <span class="const-default"> -2</span>
+			(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a51">51</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPASSWD_OK" id="PASSWD_OK"><!-- --></A>
+<div class="oddrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PASSWD_OK</span>
+			 = <span class="const-default">  1</span>
+			(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a49">49</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+<a name="constPASSWD_TOOSHORT" id="PASSWD_TOOSHORT"><!-- --></A>
+<div class="evenrow">
+
+	<div class="const-header">
+		<img src="../media/images/Variable.png" />
+		<span class="const-title">
+			<span class="const-name">PASSWD_TOOSHORT</span>
+			 = <span class="const-default"> -3</span>
+			(line <span class="line-number"><a href="../__filesource/fsource_UrbinoCommerce__includesUser.php.html#a52">52</a></span>)
+		</span>
+	</div>
+
+	<!-- ========== Info from phpDoc block ========= -->
+	
+	
+</div>
+						
+		</div>
+	</div>
+	
+	<p class="notes" id="credit">
+		Documentation generated on Wed, 09 Sep 2009 12:18:37 +0200 by <a href="http://www.phpdoc.org" target="_blank">phpDocumentor 1.4.3</a>
+	</p>
+	</div></body>
+</html>
